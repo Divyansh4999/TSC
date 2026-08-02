@@ -3,16 +3,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>The Soft Column</title>
   </head>
     <body>
      <header>
-      <div class="container">
-        
+
         <div class="logo">
-            <img src="images/logo.png" alt="The Soft Column Logo" />
+                <img src="images/The_Soft_Column.webp" alt="The Soft Column Logo" />
+                <p>THE SOFT COLUMN</p>
         </div>
+
         <nav>
             <ul>
             <li><a href="index.html">Home</a></li>
@@ -24,44 +25,39 @@
             </ul>
         </nav>
 
-        <a class="" href="#">
+        <a class="btn" href="#">
             Join Us
         </a>
-
-      </div>
      </header>
     
      <main>
         <section class="hero">
             <div class="container">
               <div class="hero-content">
-                <h1>The Soft Column</h1>
-
-                <p class="tagline">
-                    Where words find a quiet home.
-                </p>
-
-                <p class="hero-text">
-                    Stories. Memories. Quiet Moments.
-                    A space for everything that stays with you.
-                </p>
-
+                <div class="hero-top">
+                 <h1>The <span class="handwritten">Soft</span> Column</h1>
+                 <p class="tagline">Where words find a quiet home.</p>
+                </div>
+                <div class="hero-bottom">
+                 <h2>What is TSC ?</h2>
+                 <p class="hero-text">
+                    The Soft Column is a home for stories that stay with us long after we'vefinished reading.
+                    Essays,letters,tiny memories and quiet voices gathered in one place.</p>
+                </div>
                 <div class="hero-buttons">
                     <a href="#" class="btn">Start Reading</a>
-                    <a href="#" class="btn">Write for TSC</a>   
+                    <a href="#" class="btn secondary">Write for TSC</a>   
                 </div>
-
-                <div class="hero-image">
-                    <img src="images/hero-image.jpg" alt="Hero Image" />
-                </div>
-
+              </div>  
+              <div class="hero-image">
+                <img src="images/hero-image.webp" alt="Hero Image" />
               </div>
             </div>
         </section>
 
         <section id="featured">
           <div class="container">
-            <div class="featured-grid">
+            <div class="featured-grid grid">
                 <article class="daily card">
                     <h2 class="daily-header">Today's Daily</h2>
 
@@ -120,8 +116,8 @@
         
         <section class="discover">
             <div class="container">
-                <div class="discover-grid">
-                    <article class="issue">
+                <div class="discover-grid grid">
+                    <article class="issue card">
                       <h2  class="issue-heading">LATEST ISSUES</h2>
                      
                       <article class="issue-content content"> 
@@ -146,8 +142,8 @@
                           </p>
                           <a href="#">
                             Read More
-                          </a>                        
-                        </artile>
+                          </a>
+                        </article>
                         
                         <article class="issue-three">
                           <img src="images/issue-003.jpg" alt="Issue 003 Cover" loading="lazy"/>
@@ -167,7 +163,7 @@
                       </article>
                     </article>
 
-                    <article class="writer-column">
+                    <article class="writer-column card">
                       <h2  class="writer-heading">WRITER'S COLUMN</h2>
                       <a href="#">
                           Explore-more
@@ -207,8 +203,8 @@
 
         <section class="engage">
             <div class="container">
-                <div class="engage-grid">
-                    <article class="letter-box">
+                <div class="engage-grid grid">
+                    <article class="letter-box card">
                       <h2 class="letter-box-heading">
                         Letter Box
                       </h2>
@@ -223,7 +219,7 @@
                       </a>
                     </article>
 
-                    <article class="memory-jar">
+                    <article class="memory-jar card">
                       <h2 class="memory-jar-heading">
                         Memory Jar
                       </h2>
@@ -237,7 +233,7 @@
                       </a>
                     </article>
 
-                    <article class="reader-mood">
+                    <article class="reader-mood card">
                       <h2 class="reader-mood-heading">
                         Reader's Mood
                       </h2>
@@ -245,7 +241,7 @@
                         How are you feeling today?
                         We will help you find the right story for you.
                       </p>
-                      <div class="reader-mood-grid">
+                      <div class="reader-mood-grid grid">
                        <a class="mood" href="#">
                         <img src="images/nostalgic-mood.webp" alt="" loading="lazy"/>
                         Nostalgic
@@ -270,8 +266,8 @@
 
         <section class="activity">
             <div class="container">
-                <div class="activity-grid">
-                    <article class="weekly-schedule">
+                <div class="activity-grid grid">
+                    <article class="weekly-schedule card">
                       <h2 class="weekly-schedule-heading">
                         Our Week at TSC
                       </h2>
@@ -316,7 +312,7 @@
                       </a>
                     </article>
 
-                    <article class="lines-we-kept">
+                    <article class="lines-we-kept card">
                       <h2 class="lines-we-kept-heading">
                         The Lines <span class="handwritten">We Kept</span>
                       </h2>
