@@ -9,9 +9,9 @@ html{
 }
 
 :root{
-    --background:#ffd3c0;
+    --background:#ffe1d2;
     --card:#fffcf7;
-    --brown:#4a3527;
+    --brown:#7e4f30;
     --dark:#2b211b;
     --gold:#b58a42;
     --light:#d7c2a0;
@@ -215,8 +215,8 @@ hr{
     position: relative;
     overflow: hidden;
     width: 65%;
-    height: 85vh;
-    z-index: 1;
+    height: 90vh;
+    z-index:-1;
     margin-left: -2rem;
 }
 
@@ -253,7 +253,7 @@ hr{
     left:0;
     bottom:0;
     width:100%;
-    height:30px;
+    height:20px;
     background:linear-gradient(to top,#f7f3ec,transparent)
 }
 
@@ -373,7 +373,8 @@ h2::before{
      display:flex;
      flex:1;
      width:100%;
-    
+     margin-bottom:10px;
+     margin-left:10px;
 }
 
 img{
@@ -396,6 +397,20 @@ img{
     bottom:0px;
     right:0px;
 }
+
+p{
+    font-size:clamp(0.5,1rem,2rem);
+}
+
+/*====================
+Author Specifications
+==================*/
+
+
+
+
+
+
 
 /*===================
     Phone Layout
