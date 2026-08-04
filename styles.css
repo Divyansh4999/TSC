@@ -9,7 +9,7 @@ html{
 }
 
 :root{
-    --background:#f7eee0;
+    --background:#ffd3c0;
     --card:#fffcf7;
     --brown:#4a3527;
     --dark:#2b211b;
@@ -53,10 +53,12 @@ span{
     flex-direction:row;
     flex-wrap:wrap;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 1300px;
     margin: auto;
     border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+    align-items: center;
 }
 
 img{
@@ -232,10 +234,10 @@ hr{
     inset: 0;
     background: linear-gradient(
         to left,
-        rgba(250, 211, 145, 0.06)0%,
-        rgba(247, 229, 198, 0.2) 20%,
-        rgba(247, 243, 236, 0.5) 40%,
-        rgba(247, 243, 236, 0.8) 65%,
+        rgba(247, 206, 135, 0.06)0%,
+        rgba(233, 188, 229, 0.2) 20%,
+        rgba(243, 201, 221, 0.5) 40%,
+        rgba(252, 229, 238, 0.8) 65%,
         var(--background) 100%
     );
     z-index: 2;
@@ -297,20 +299,35 @@ cards
 ====================*/
 
 .card{
+    flex:1;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 16px 40px var(--shadow);
     background: var(--card-background);
-    padding: 24px;
-    margin:10px 0;
-    width: 100%;
+    width:100%;
+    padding:15px;
+    padding-bottom:0;
+    margin:10px 0 0;
+    overflow:hidden;
 }
 
+/*====improve*/
+card:hover{
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+/*=======*/
 
 .grid{
     display:flex;
     flex-wrap:wrap;
     gap: 20px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
 }
 
 content{
@@ -324,7 +341,67 @@ content{
     width: 50%;
 }
 
-@media (max-width: 768px) {
+/*================
+ CARD Interior
+ ===============*/
+
+h2{
+   position:relative;
+   top:0;
+   left:0;
+   font-weight:500;
+   border-bottom:2px solid var(--border);
+   text-transform:uppercase;
+   font-size:clamp(1rem,1.35rem,1.7rem);
+}
+
+h2::before{
+    content:"🍂";
+    padding:5px;
+}
+
+.content{
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-content:stretch;
+    flex-grow:1;
+}
+
+.division{
+     display:flex;
+     flex:1;
+     width:100%;
+    
+}
+
+img{
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image{
+    width:100%;
+    border-radius:var(--radius);
+    margin-right:10px;
+}
+
+.link{
+    color:var(--brown);
+    margin-top:auto;
+    align-self:flex-start;
+    text-decoration: none;
+    position:relative;
+    bottom:0px;
+    right:0px;
+}
+
+/*===================
+    Phone Layout
+====================*/
+
+ @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
         justify-content: center;
