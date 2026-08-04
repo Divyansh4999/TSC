@@ -56,7 +56,6 @@ span{
     width: 100%;
     max-width: 1300px;
     margin: auto;
-    border-bottom: 1px solid var(--border);
     justify-content: space-between;
     align-items: center;
 }
@@ -302,21 +301,19 @@ cards
     flex:1;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: 0 16px 40px var(--shadow);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     background: var(--card-background);
-    width:100%;
-    padding:15px;
-    padding-bottom:0;
-    margin:10px 0 0;
-    overflow:hidden;
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 0;
+    margin: 10px 0 0;
+    overflow: hidden;
 }
 
-/*====improve*/
-card:hover{
-    box-shadow:var(--shadow);
-    transition:var(--transition);
+.card:hover {
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
-/*=======*/
 
 .grid{
     display:flex;
@@ -330,15 +327,145 @@ card:hover{
     justify-content: space-between;
 }
 
-content{
+.content{
     display:flex;
     flex-direction:column;
     padding: 20px 0;
 }
 
+.featured-grid {
+    align-items: stretch;
+}
+
+.division {
+    display:flex;
+    flex:1;
+    width:100%;
+    margin-bottom:10px;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.author-image {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top:10px;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    border-radius:60%;
+    object-fit: cover;
+}
+
+.author-content {
+    gap: 6px;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+.author-id {
+    font-size: 0.95rem;
+    color: grey;
+}
+
+.author-btn {
+    margin:0 auto 10px;
+
+}
+
+.meta-label {
+    color: grey;
+    margin: 5px 0;
+}
+
 .discover-grid > .issue,
 .discover-grid > .writer-column {
-    width: 50%;
+    width: calc(50% - 10px);
+    min-width: 280px;
+}
+
+.issue .divider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.issue-one,
+.issue-two,
+.issue-three {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border:1px solid var(--background);
+    border-radius:var(--radius);
+    padding:10px;
+}
+
+.issue-one img,
+.issue-two img,
+.issue-three img {
+    width: 100%;
+    height:180px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+/*==========================================
+      Writer content
+=============================================*/
+
+.writer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.writer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--dark);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.writer:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.writer img {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.writer-name {
+    margin-top: 4px;
+}
+
+.writer-id {
+    color: grey;
+}
+
+.highlight {
+    color: var(--brown);
+    font-weight: 600;
 }
 
 /*================
@@ -367,14 +494,6 @@ h2::before{
     flex-direction:column;
     align-content:stretch;
     flex-grow:1;
-}
-
-.division{
-     display:flex;
-     flex:1;
-     width:100%;
-     margin-bottom:10px;
-     margin-left:10px;
 }
 
 img{
@@ -408,7 +527,14 @@ Author Specifications
 
 
 
+/*==================
+   ISSues 
+   ==================*/
 
+.issue-content{
+    display:flex;
+    flex-wrap:wrap;
+}
 
 
 
