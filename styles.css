@@ -19,7 +19,7 @@ html{
     --shadow:0 10px 30px rgba(0,0,0,0.8);
     --radius:18px;
     --transition:1.5s ease;
-    --card-background:rgba(250, 246, 246, 0.92);
+    --card-background:#f7ebd7;
 }
 
 body{
@@ -310,6 +310,10 @@ cards
     overflow: hidden;
 }
 
+.daily{
+    flex:1.2;
+}
+
 .card:hover {
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -342,13 +346,17 @@ cards
     flex:1;
     width:100%;
     margin-bottom:10px;
-    gap: 16px;
+    gap: 10px;
     align-items: flex-start;
 }
 
+/*=========================
+    Author
+==========================*/
+
 .author-image {
-    width: 140px;
-    height: 140px;
+    max-width: 140px;
+    max-height: 140px;
     flex-shrink: 1;
     border-radius: 50%;
     overflow: hidden;
@@ -387,6 +395,10 @@ cards
     margin: 5px 0;
 }
 
+/*==============================
+        ISSUE
+ ===============================*/
+
 .discover-grid > .issue,
 .discover-grid > .writer-column {
     width: calc(50% - 10px);
@@ -416,11 +428,26 @@ cards
 .issue-two img,
 .issue-three img {
     width: 100%;
-    height:180px;
+    max-height:180px;
     border-radius: 12px;
     object-fit: cover;
 }
 
+.issue{
+    flex:1.6;
+}
+
+.daily .division {
+    align-items: stretch;
+}
+
+.daily .content {
+    justify-content: space-between;
+}
+
+.daily .link {
+    align-self: flex-end;
+}
 
 /*==========================================
       Writer content
@@ -435,12 +462,24 @@ cards
 
 .writer {
     display: flex;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: var(--dark);
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 5px;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 70px;
+}
+
+.writer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .writer:last-child {
@@ -449,14 +488,11 @@ cards
 }
 
 .writer img {
-    width: 100%;
-    height: 120px;
-    border-radius: 12px;
+    flex-shrink: 0;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-.writer-name {
-    margin-top: 4px;
 }
 
 .writer-id {
@@ -465,7 +501,6 @@ cards
 
 .highlight {
     color: var(--brown);
-    font-weight: 600;
 }
 
 /*================
@@ -512,28 +547,40 @@ img{
     margin-top:auto;
     align-self:flex-start;
     text-decoration: none;
-    position:relative;
-    bottom:0px;
-    right:0px;
+}
+
+.division > div{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    flex:1;
+}
+
+.division > img{
+    flex:1;
+    object-fit:cover;
+    margin-top:-30px;
 }
 
 p{
     font-size:clamp(0.5,1rem,2rem);
+    flex:1;
 }
 
-/*====================
-Author Specifications
-==================*/
+.memory-jar , .letter-box{
+    max-height : 270px;
+}
 
-
-
-/*==================
-   ISSues 
-   ==================*/
-
-.issue-content{
+.mood{
     display:flex;
-    flex-wrap:wrap;
+    flex-direction:column;
+    border:1px solid var(--gold);
+    border-radius: var(--radius);
+    min-height:40px;
+    max-height:80px;
+    min-width:40px;
+    max-width:80px;
+    flex:1;
 }
 
 
