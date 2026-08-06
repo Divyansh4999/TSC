@@ -16,7 +16,7 @@ html{
     --gold:#b58a42;
     --light:#d7c2a0;
     --border:#e7ddd0;
-    --shadow:0 10px 30px rgba(0,0,0,0.8);
+    --shadow:0 5px 10px rgba(0,0,0,0.8);
     --radius:18px;
     --transition:1.5s ease;
     --card-background:#f7ebd7;
@@ -327,14 +327,7 @@ cards
     width: 100%;
     max-width: 1300px;
     margin: auto;
-    border-bottom: 1px solid var(--border);
     justify-content: space-between;
-}
-
-.content{
-    display:flex;
-    flex-direction:column;
-    padding: 20px 0;
 }
 
 .featured-grid {
@@ -345,7 +338,7 @@ cards
     display:flex;
     flex:1;
     width:100%;
-    margin-bottom:10px;
+    margin:10px 0;
     gap: 10px;
     align-items: flex-start;
 }
@@ -433,6 +426,14 @@ cards
     object-fit: cover;
 }
 
+.issue-one:hover,
+.issue-two:hover,
+.issue-three:hover,
+.mood:hover{
+    box-shadow: var(--shadow);
+    transition: 1s ease-in;
+}
+
 .issue{
     flex:1.6;
 }
@@ -441,7 +442,7 @@ cards
     align-items: stretch;
 }
 
-.daily .content {
+.daily{
     justify-content: space-between;
 }
 
@@ -457,7 +458,6 @@ cards
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 16px;
 }
 
 .writer {
@@ -472,6 +472,11 @@ cards
     justify-content: space-between;
     width: 100%;
     max-height: 70px;
+}
+
+.writer:hover{
+    box-shadow:var(--shadow);
+    transition:1s ease;
 }
 
 .writer > div {
@@ -501,6 +506,7 @@ cards
 
 .highlight {
     color: var(--brown);
+    font-weight: 700;
 }
 
 /*================
@@ -527,8 +533,9 @@ h2::before{
     width:100%;
     flex-wrap:wrap;
     flex-direction:column;
-    align-content:stretch;
-    flex-grow:1;
+    flex:1;
+    padding: 10px 0;
+    justify-content:space-between;
 }
 
 img{
@@ -547,6 +554,7 @@ img{
     margin-top:auto;
     align-self:flex-start;
     text-decoration: none;
+    font-weight:700;
 }
 
 .division > div{
@@ -554,6 +562,8 @@ img{
     flex-direction:column;
     height:100%;
     flex:1;
+    gap:5px;
+    padding:5px;
 }
 
 .division > img{
@@ -566,6 +576,10 @@ p{
     font-size:clamp(0.5,1rem,2rem);
     flex:1;
 }
+
+/*============================
+   engage -grid
+==========================*/
 
 .memory-jar , .letter-box{
     max-height : 270px;
@@ -581,9 +595,48 @@ p{
     min-width:40px;
     max-width:80px;
     flex:1;
+    margin:20px 0 5px;
+    padding:5px;
+    text-decoration: none;
+}
+
+.community-content{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding-bottom: 0;
+    margin-bottom:0;
+    align-items: stretch;
+    margin-top:10px;
 }
 
 
+/*======================
+  Weekly schedule
+========================*/
+
+.weekly-schedule-grid{
+    display: grid;
+    gap:0px;
+    grid-template-columns: repeat(auto-fit,minmax(max-content,1fr));
+    margin:10px 0;
+    width:100%;
+}
+
+.day{
+    flex:1 ;
+    border:1px solid var(--border);
+    min-height:40px;
+    white-space: nowrap;
+    min-width:max-content;
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+    padding:5px;
+    border-radius:var(--radius);
+}
 
 /*===================
     Phone Layout
