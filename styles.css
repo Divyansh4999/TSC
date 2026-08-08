@@ -9,7 +9,7 @@ html{
 }
 
 :root{
-    --background:#ffe1d2;
+    --background:#f5e2c2;
     --card:#fffcf7;
     --brown:#7e4f30;
     --dark:#2b211b;
@@ -39,6 +39,10 @@ h1{
     margin-bottom: 1rem;
 }
 
+p{
+    font-size:1rem;
+}
+
 .hero-content{
     width: 100%;
     padding-top: 1rem;
@@ -48,22 +52,43 @@ span{
     font-family:Allura, Parisienne;
 }
 
-.container{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    align-items: center;
-    width: 100%;
-    max-width: 1300px;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
+a:hover{
+    color:var(--gold);
+    font-size:1.05em;
+    transition:1s ease-in-out;
 }
+
+/*===========================
+ Some classes
+ =======================*/
+
 
 img{
     display: block;
     width:100%;
     height:auto;
+}
+
+
+.division {
+    display:flex;
+    flex:1;
+    width:100%;
+    margin:10px 0;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.vertical-division{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin: 10px 3px;
+
+}
+
+.vertical-division div {
+    flex:1;
 }
 
 /* =================
@@ -185,7 +210,6 @@ li a:hover{
     flex-wrap:wrap;
     align-items: center;
     width: 100%;
-
     margin: 0;
     overflow: hidden;
 }
@@ -257,7 +281,7 @@ hr{
 }
 
 h1{
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: 4rem;
     line-height: 1.08;
     margin: 0;
 }
@@ -288,7 +312,7 @@ h1{
 }
 
 .tagline{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--dark);
     font-style: italic;
 }
@@ -304,6 +328,7 @@ cards
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     background: var(--card-background);
     width: 100%;
+    max-height:80vh;
     padding: 15px;
     padding-bottom: 0;
     margin: 10px 0 0;
@@ -334,14 +359,6 @@ cards
     align-items: stretch;
 }
 
-.division {
-    display:flex;
-    flex:1;
-    width:100%;
-    margin:10px 0;
-    gap: 10px;
-    align-items: flex-start;
-}
 
 /*=========================
     Author
@@ -392,6 +409,12 @@ cards
         ISSUE
  ===============================*/
 
+.head-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
 .discover-grid > .issue,
 .discover-grid > .writer-column {
     width: calc(50% - 10px);
@@ -436,10 +459,6 @@ cards
 
 .issue{
     flex:1.6;
-}
-
-.daily .division {
-    align-items: stretch;
 }
 
 .daily{
@@ -520,7 +539,8 @@ h2{
    font-weight:500;
    border-bottom:2px solid var(--border);
    text-transform:uppercase;
-   font-size:clamp(1rem,1.35rem,1.7rem);
+   font-size:clamp(1rem,1.3rem,1.5rem);
+   margin-top: -5px;;
 }
 
 h2::before{
@@ -600,30 +620,9 @@ p{
     text-decoration: none;
 }
 
-.community-content{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding-bottom: 0;
-    margin-bottom:0;
-    align-items: stretch;
-    margin-top:10px;
-}
-
-
 /*======================
   Weekly schedule
 ========================*/
-
-.weekly-schedule-grid{
-    display: grid;
-    gap:0px;
-    grid-template-columns: repeat(auto-fit,minmax(max-content,1fr));
-    margin:10px 0;
-    width:100%;
-}
 
 .day{
     flex:1 ;
@@ -633,11 +632,64 @@ p{
     min-width:max-content;
     display:flex;
     flex-direction:column;
-    margin:10px;
     padding:5px;
     border-radius:var(--radius);
 }
 
+.day:hover{
+    box-shadow:0 2px 4px var(--light);
+}
+
+.quote{
+    border:2px solid var(--border);
+    background-color: var(--light);
+    border-radius:var(--radius);
+    padding:10px;
+    flex:2;
+}
+/*=========================
+    FOOTER
+========================*/
+footer{
+    background-color: #f5e9da;
+    margin-top:15px;
+}
+
+.footer-grid{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.footer-grid > img{
+    height:clamp(10vh,40vh,50vh);
+    object-fit: cover;
+    flex:1.25;
+    padding:0;
+}
+
+.footer-grid article{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    margin-top:15px;
+}
+
+.social-link-section{
+    display:flex;
+    flex:1;
+    align-items: center;
+}
+
+footer > p {
+    margin:auto;
+    text-align:center;
+}
+
+footer h2{
+    border-bottom: 0;
+}
 /*===================
     Phone Layout
 ====================*/

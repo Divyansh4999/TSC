@@ -3,6 +3,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <title>The Soft Column</title>
   </head>
@@ -17,11 +20,11 @@
         <nav>
             <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">Daily</a></li>
-            <li><a href="contact.html">Issues</a></li>
-            <li><a href="contact.html">Writers</a></li>
-            <li><a href="contact.html">Submit</a></li>
-            <li><a href="contact.html">About</a></li>
+            <li><a href="daily.html">Daily</a></li>
+            <li><a href="issue.html">Issues</a></li>
+            <li><a href="writers.html">Writers</a></li>
+            <li><a href="submit.html">Submit</a></li>
+            <li><a href="info.html">About</a></li>
             </ul>
         </nav>
 
@@ -35,7 +38,7 @@
             <div class="hero-container">
               <div class="hero-content">
                 <div class="hero-top">
-                 <h1>The <span class="handwritten">Soft</span> Column</h1>
+                 <h1>The <span style="font-family: Dancing Script,cursive;font-size: 6rem;color:var(--gold)">Soft</span> Column</h1>
                  <hr>
                  <p class="tagline">Where words find a quiet home.</p>
                 </div>
@@ -57,7 +60,6 @@
         </section>
 
         <section id="featured">
-          <div class="container">
             <div class="featured-grid grid">
               <article class="daily card" style="margin-top: -10px;">
                 <h2 class="daily-header">Today's Daily</h2>
@@ -72,57 +74,61 @@
                     <p style="margin-top: 10px;">
                       A small memory. A quiet feeling. Something you'll carry for the rest of your life.
                     </p>
-                    <a href="#" class="link">Read More →</a>
+                    <a href="daily.html" class="link">Read More →</a>
                   </div>
                 </div>
               </article>
 
               <article class="author card" style="margin-top: -10px;">
                 <h2 class="author-header">Author of the Day</h2>
-                <div class="division">
-                  <div class="author-image image">
-                    <img src="images/footer-tree.webp" alt="Author Image" />
-                  </div>
+                <div class="vertical-division">
+                  <div class="division">
+                    <div class="author-image image">
+                      <img src="images/girlpfp.jpg" alt="Author Image" />
+                    </div>
 
-                  <div class="author-content content">
-                   <div>
-                    <span class="author-name">Jane Doe</span>
-                    <p class="author-id">@janedoe</p>
-                   </div> 
-                    <p class="author-bio" style="font-size:0.9rem;">
-                      Jane Doe is a passionate writer who explores the depths of human emotions through her words.
-                    </p>
+                    <div class="author-content content">
+                     <div>
+                      <span class="author-name">Jane Doe</span>
+                      <p class="author-id">@janedoe</p>
+                     </div> 
+                      <p class="author-bio" style="font-size:0.9rem;">
+                        Jane Doe is a passionate writer who explores the depths of human emotions through her words.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <a href="#" class="btn author-btn">Visit Author's Column →</a>
+                  <a href="#" class="btn author-btn">Visit Author's Column →</a>
+                </div>  
               </article>
 
               <article class="community card" style="margin-top: -10px;">
                 <h2 class="community-header">COMMUNITY PROMPT</h2>
-                <div class="community-content content">
-                  <h3>What's one thing that takes you back to your childhood?</h3>
-                  <p>Share your sweet memories in the conversation with the world.</p>
-                  <a href="#" class="btn">Join the conversation →</a>
-                </div>
+                <div class="vertical-division">
+                  <div class="content">
+                   <h3>What's one thing that takes you back to your childhood?</h3>
+                   <p>Share your sweet memories in the conversation with the world.</p>
+                  </div>
+                  <div>
+                    <a href="#" class="btn">Join the conversation →</a>
+                  </div>  
+                </div>  
               </article>
             </div>
-          </div>
         </section>
 
         
         <section class="discover">
-            <div class="container">
-                <div class="discover-grid grid">
+            <div class="discover-grid grid">
                     <article class="issue card">
-                     <div style="display:flex;justify-content:space-between;align-items:center;">
+                     <div class="head-link">
                       <h2 class="issue-heading">LATEST ISSUES</h2>
-                      <a href="#" class="link">
+                      <a href="issue.html" class="link">
                           View All Issues →
                       </a>
                      </div>
                       <div class="divider">
                         <article class="issue-one">
-                          <img src="images/footer-tree.webp" alt="Issue 001 Cover" loading="lazy"/>
+                          <img src="images/yellow-sweater-intro.webp" alt="Issue 001 Cover" loading="lazy"/>
                           <span>TSC ISSUE 001</span>
                           <h3>The Yellow Sweater</h3>
                           <p>
@@ -132,7 +138,7 @@
                         </article>
 
                         <article class="issue-two">
-                          <img src="images/issue-002.jpg" alt="Issue 002 Cover" loading="lazy"/>
+                          <img src="images/nicola-tesla.webp" alt="Issue 002 Cover" loading="lazy"/>
                           <span>TSC ISSUE 002</span>
                           <h3>The Silent Garden</h3>
                           <p>
@@ -142,7 +148,7 @@
                         </article>
 
                         <article class="issue-three">
-                          <img src="images/issue-003.jpg" alt="Issue 003 Cover" loading="lazy"/>
+                          <img src="images/tiny-memory.webp" alt="Issue 003 Cover" loading="lazy"/>
                           <span>TSC ISSUE 003</span>
                           <h3>The Hidden Path</h3>
                           <p>
@@ -156,15 +162,15 @@
                     </article>
 
                     <article class="writer-column card">
-                     <div style="display:flex;justify-content:space-between;align-items:center;"> 
+                     <div class="head-link"> 
                       <h2  class="writer-heading">WRITER'S COLUMN</h2>
-                      <a href="#" class="link">
+                      <a href="writers.html" class="link">
                           Explore All Writers →
                       </a>
                      </div>             
                       <div class="writer-content content">
                         <a class="writer"> 
-                         <img src="images/letter-box-logo.webp" alt="Writer 001 Image" loading="lazy"/>
+                         <img src="images/boy-pfp.jpg" alt="Writer 001 Image" loading="lazy"/>
                          <div style="display:flex;flex-direction:column;">
                           <h3 class="writer-name">John Smith</h3>
                           <p class="writer-id">@john</p>
@@ -173,7 +179,7 @@
                         </a>
 
                         <a class="writer" href="#">
-                         <img src="images/writer-002.jpg" alt="Writer 002 Image" loading="lazy"/>
+                         <img src="images/girlpfp.jpg" alt="Writer 002 Image" loading="lazy"/>
                          <div style="display:flex;flex-direction:column;"> 
                           <h3 class="writer-name">Second</h3>
                           <p class="writer-id">@second</p>
@@ -182,7 +188,7 @@
                         </a>
 
                         <a class="writer" href="#">
-                         <img src="images/writer-003.jpg" alt="Writer 003 Image" loading="lazy"/>
+                         <img src="images/default-boy-pfp.jpg" alt="Writer 003 Image" loading="lazy"/>
                          <div style="display:flex;flex-direction:column;">
                           <h3 class="writer-name">Third</h3>
                           <p class="writer-id">@third</p>
@@ -191,7 +197,7 @@
                         </a>
 
                         <a class="writer" href="#">
-                         <img src="images/writer-004.jpg" alt="Writer 004 Image" loading="lazy"/>
+                         <img src="images/default-girl-pfp.jpg" alt="Writer 004 Image" loading="lazy"/>
                          <div style="display:flex;flex-direction:column;">
                           <h3 class="writer-name">Fourth</h3>
                           <p class="writer-id">@fourth</p>
@@ -200,29 +206,27 @@
                         </a>
                       </div>
                     </article>
-                </div>
-            </div>
+            </div>    
         </section>
 
         <section class="engage">
-            <div class="container">
-                <div class="engage-grid grid">
+            <div class="engage-grid grid">
                     <article class="letter-box card">
                       <h2 class="letter-box-heading">
                         Letter Box
                       </h2>
                      <div class="division">
-                        <div> 
+                        <div class="content"> 
                           <p>
                             A letter. A memory. A confession.<br>
                             Send it anonymously.<br>
                             We read them with care.<br>
                           </p>
-                          <a href="#" class="link">
+                          <a href="letter-box.html" class="link">
                             Send a Letter →
                           </a>
                         </div>  
-                       <img class="letter-box-image" src="images/letter-box-logo.webp" alt="Letter Box Image" loading="lazy"/>
+                        <img class="letter-box-image" src="images/letter-box-logo.webp" alt="Letter Box Image" loading="lazy"/>
                      </div> 
                     </article>
 
@@ -231,162 +235,136 @@
                         Memory Jar
                       </h2>
                       <div class="division"> 
-                        <div>
+                        <div class="content">
                          <p>
                            Tiny Memories. Big Meaning.<br>
                            Share something in small sentences.<br>
                          </p>
-                         <a href="#" class="link">
+                         <a href="memory-jar.html" class="link" >
                            Send a Memory →
                          </a>
                         </div> 
-                       <img class="memory-jar-image" src="images/memory-jar-logo.webp" alt="Memory Jar Image" loading="lazy"/>
+                        <img class="memory-jar-image" src="images/memory-jar-logo.webp" alt="Memory Jar Image" loading="lazy"/>
                       </div>  
                       
                     </article>
+                    <article class="lines-we-kept card">
+                      <div class="head-link">
+                        <h2 class="lines-we-kept-heading">
+                          The <span style="font-family: Dancing Script,cursive;color:var(--gold);font-weight: 900;"> Lines </span> We Kept
+                         </h2>
+                        <a href="#" class="link">
+                          Read The Line We Kept →
+                        </a>
+                      </div> 
+                      <div class="vertical-division">
+                        <div class="lines-we-kept-text">
+                          <p>A collection of lines that stayed with us.</p>
+                          <p>A few words that made us feel something.</p>
+                        </div>
 
-                    <article class="reader-mood card">
-                      <h2 class="reader-mood-heading">
-                        Reader's Mood
-                      </h2>
-                     <div class="community-content">
-                      <p>
-                        How are you feeling today?<br>
-                        We will help you find <br>the right story for you.
-                      </p>
-                      <div class="reader-mood-grid grid">
-                       <a class="mood" href="#">
-                        <img src="images/nostalgic-mood.webp" alt="" loading="lazy"/>
-                        Nostalgic
-                       </a>
-                       <a class="mood" href="#">
-                        <img src="images/hopeful-mood.webp" alt="" loading="lazy"/>
-                        Hopeful
-                       </a>
-                       <a class="mood" href="#">
-                        <img src="images/peaceful-mood.webp" alt="" loading="lazy"/>
-                        Peaceful
-                       </a>
-                       <a class="mood" href="#">
-                        <img src="images/surprize-mood.webp" alt="" loading="lazy"/>
-                        Surprize Me
-                       </a>
-                      </div>
-                     </div>   
+                        <div class="quote">
+                          <p>"The first rain always smells like home."</p>
+                          <p>- Churchill (IN by churchill himself)</p>
+                        </div>
+
+                      </div>  
                     </article>
-                </div>
             </div>
         </section>
 
         <section class="activity">
-            <div class="container">
-                <div class="activity-grid grid">
+            <div class="activity-grid grid">
                     <article class="weekly-schedule card">
-                     <div style="display:flex;justify-content:space-between;align-items:center;"> 
+                     <div class="head-link"> 
                       <h2 class="weekly-schedule-heading">
                         Our Week at TSC
                       </h2>
                       <a href="#" class="link">
                         Explore the Week →
                       </a>
-                     </div> 
-                      <p class="weekly-schedule-text" style="margin-top:10px;">
-                        Every day has it's own little ritual.
-                        Here's what we have planned for this week.
-                      </p>
-
-                      <div class="weekly-schedule-grid">
-                        <div class="day">
-                          <h3>Monday</h3>
-                          <p>TSC Daily</p>
-                        </div>
-                        <div class="day">
-                          <h3>Tuesday</h3>
-                          <p>A Tiny Memory</p>
-                        </div>
-                        <div class="day">
-                          <h3>Wednesday</h3>
-                          <p>A Quiet Question</p>
-                        </div>
-                        <div class="day">
-                          <h3>Thursday</h3>
-                          <p>Frame and Feeling</p>
-                        </div>
-                        <div class="day">
-                          <h3>Friday</h3>
-                          <p>TSC Issue</p>  
-                        </div>
-                        <div class="day">
-                          <h3>Satday</h3>
-                          <p>Community Story</p>
-                        </div>
-                        <div class="day">
-                          <h3>Sunday</h3>
-                          <p>A Letter</p>
-                        </div>
-                      </div>
+                     </div>
+                     <div class="vertical-division"> 
+                        <p class="weekly-schedule-text" style="margin-top:10px;">
+                          Every day has it's own little ritual.
+                          Here's what we have planned for this week.
+                        </p>
+                        <div class="vertical-division" style="gap:2px;">
+                          <div class="division">
+                            <div class="day">
+                              <h3>Monday</h3>
+                              <p>TSC Daily</p>
+                            </div>
+                            <div class="day">
+                              <h3>Tuesday</h3>
+                              <p>A Tiny Memory</p>
+                            </div>
+                            <div class="day">
+                              <h3>Wednesday</h3>
+                              <p>A Quiet Question</p>
+                            </div>
+                            <div class="day">
+                              <h3>Thursday</h3>
+                              <p>Frame and Feeling</p>
+                            </div>
+                          </div>
+                          <div class="division">  
+                            <div class="day">
+                              <h3>Friday</h3>
+                              <p>TSC Issue</p>  
+                            </div>
+                            <div class="day">
+                              <h3>Satday</h3>
+                              <p>Community Story</p>
+                            </div>
+                            <div class="day">
+                              <h3>Sunday</h3>
+                              <p>A Letter</p>
+                            </div>
+                          </div>
+                        </div>  
+                     </div>  
                     </article>
-
-                    <article class="lines-we-kept card">
-                      <div style="display:flex;justify-content:space-between;align-items:center;">
-                        <h2 class="lines-we-kept-heading">
-                          The Lines <span>We Kept</span>
-                        </h2>
-                        <a href="#" class="link">
-                          Read The Line We Kept →
-                        </a>
-                      </div> 
-                      <p class="lines-we-kept-text">
-                        A collection of lines that stayed with us.
-                        A few words that made us feel something.
-                      </p>
-
-                      <div class="quote">
-                        <p>"The first rain always smells like home."</p>
-                        <p>- Churchill (IN by churchill himself)</p>
-                      </div>
-                    </article>
-                </div>
             </div>
         </section>
 
      </main>
     
      <footer>
-       <div class="footer-container container">
-          <div class="footer-grid">
-           <img class="footer-logo" src="images/footer-tree.webp" alt="" />
-           <article class="conclude">
+        <div class="footer-grid">
+           <img class="footer-logo" src="images/footer-tree.webp" alt="A beautiful tree " />
+           <article class="conclude" style="border-right:2px solid var(--border);">
              <h2>THE SOFT COLUMN</h2>
-             <p>
-              Where words find a quiet home.
-             </p>
-             <p>
-              Keep Writing.
-              Keep Reading .
-              We will keep the light on for you.
-             </p>
+             <div class="vertical-division">
+               <div>
+                Where words find a quiet home.
+               </div>
+               <div>
+                Keep Writing.<br>
+                Keep Reading .<br>
+                We will keep the light on for you.
+               </p>
            </article>
-
-           <article class="Substack">
-             <img class="substack-logo" src="images/substack-logo.webp" alt="" />
-             <p>
-              Longer stories, letters and essays delivered to your inbox every week.
-             </p>
-             <a href="#">
-              Read on Substack →
-             </a>
            </article>
-
-           <article class="socials">
+          
+           <article class="socials" >
              <h2>Follow Us</h2>
-             <div class="social-links">
-               <a href="#insta">@the_soft_column</a>
-               <a href="#substack">The Soft Column</a>
-               <a href="mailto:thesoftcolumn@gmail.com">thesoftcolumn@gmail.com</a>
+             <div class="vertical-division">
+              <div class="social-link-section">
+                <p>Instagram</p>
+                <a href="#insta">@the_soft_column</a>
+              </div> 
+              <div class="social-link-section">
+                <p>Substack</p>
+                <a href="#substack">The Soft Column</a>
+              </div>  
+              <div class="social-link-section"> 
+                <p>Email</p>
+                <a href="mailto:thesoftcolumn@gmail.com">thesoftcolumn@gmail.com</a>
+              </div> 
              </div>
-          </div>  
-       </div>
+          
+        </div>
        <p>&copy; 2026 The Soft Column. All rights reserved.</p>
      </footer>
     </body>
