@@ -240,7 +240,7 @@ hr{
     width: 65%;
     height: 90vh;
     z-index:-1;
-    margin-left: -2rem;
+    margin:0 -2rem;
 }
 
 .hero-image img{
@@ -259,13 +259,13 @@ hr{
         to left,
         rgba(247, 206, 135, 0.06)0%,
         rgba(233, 188, 229, 0.2) 20%,
-        rgba(243, 201, 221, 0.5) 40%,
-        rgba(252, 229, 238, 0.8) 65%,
+        rgba(251, 253, 220, 0.5) 40%,
+        #f4e4c4 65%,
         var(--background) 100%
     );
     z-index: 2;
     pointer-events: none;
-    width:105px;
+    width:70px;
     height:80%;
     padding:10% 0 5%;
 }
@@ -646,6 +646,13 @@ p{
     border-radius:var(--radius);
     padding:10px;
     flex:2;
+}
+
+@media (max-width: 768px) {
+    .activity-grid .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 /*=========================
     FOOTER
