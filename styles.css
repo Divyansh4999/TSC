@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0.05rem;
+    padding: 0.05rem;
     box-sizing: border-box;
 }
 
@@ -36,6 +36,7 @@ h1,h2,h3{
 h1{
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.1;
+    margin:0;
     margin-bottom: 1rem;
 }
 
@@ -52,9 +53,12 @@ span{
     font-family:Allura, Parisienne;
 }
 
+a{
+    text-decoration: none;
+    font-size:1rem;
+}
 a:hover{
     color:var(--gold);
-    font-size:1.05em;
     transition:1s ease-in-out;
 }
 
@@ -75,7 +79,7 @@ img{
     margin:0.625rem 0;
     gap: 0.625rem;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .vertical-division{
@@ -326,7 +330,6 @@ cards
     box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.08);
     background: var(--card-background);
     width: 100%;
-    max-height:80vh;
     padding: 0.9375rem;
     padding-bottom: 0;
     margin: 0.625rem 0 0;
@@ -436,13 +439,13 @@ cards
     gap: 0.5rem;
     border:0.0625rem solid var(--background);
     border-radius:var(--radius);
-    padding:0.625rem;
 }
 
 .issue-one img,
 .issue-two img,
 .issue-three img {
     width: 100%;
+    min-height:9rem;
     max-height:11.25rem;
     border-radius: 0.75rem;
     object-fit: cover;
@@ -574,6 +577,7 @@ img{
     align-self:flex-start;
     text-decoration: none;
     font-weight:700;
+    font-size:1.15rem;
 }
 
 .division > div{
@@ -604,6 +608,12 @@ p{
     max-height : 16.875rem;
 }
 
+.letter-box-image,.memory-jar-image{
+    width:clamp(25%,20rem,50%);
+    height:clamp(50%,75%,100%);
+    padding-top: 3rem;
+}
+
 .mood{
     display:flex;
     flex-direction:column;
@@ -622,23 +632,6 @@ p{
 /*======================
   Weekly schedule
 ========================*/
-
-.day{
-    flex:1 ;
-    border:0.0625rem solid var(--border);
-    min-height:2.5rem;
-    white-space: nowrap;
-    min-width:max-content;
-    display:flex;
-    flex-direction:column;
-    padding:0.3125rem;
-    border-radius:var(--radius);
-}
-
-.day:hover{
-    box-shadow:0 0.125rem 0.25rem var(--light);
-}
-
 .quote{
     border:0.125rem solid var(--border);
     background-color: var(--light);
@@ -706,25 +699,37 @@ footer h2{
     header {
         flex-wrap: wrap;
         justify-content:flex-start;
+        height: clamp(3rem, 6vw, 8.625rem);
+    }
+
+    h1{
+        display:flex;
+        flex-wrap:nowrap;
+        align-items: baseline;
+        gap:7px;
+    }
+
+    p{
+        font-size: 1.1rem;
     }
 
     .logo p{
-      font-size: clamp(0.7rem, 1.4vw, 1.3rem);
+      font-size: clamp(1.25rem, 1.4vw, 1.3rem);
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin: 0;
-      max-height: clamp(2.25rem, 3.75vw, 5.375rem);
+      max-height: clamp(3rem, 6vw, 8.625rem);
       margin-top: -5px;
     }
 
     .logo img{
-      width:clamp(1.25rem, 2.5rem, 3.375rem);
-      height: clamp(1.25rem, 2.5rem, 3.375rem);
+      width:clamp(1.5rem, 3rem, 5rem);
+      height: clamp(1.5rem, 2.9rem, 5rem);
       border-radius: 0.625rem;
       margin-top:0;
-      max-height: clamp(2.25rem, 3.75vw, 5.375rem);
-      margin-top: -7px;
+      max-height: clamp(3rem, 6vw, 8.625rem);
+      margin-top: -10px;
     }
 
 
@@ -741,20 +746,19 @@ footer h2{
     }
 
     .logo {
-        width: 50%;
+        width: 100%;
         justify-content: center;
         min-width: auto;
+        justify-content: center;
+        align-items: center;
     }
 
     .join-us{
-        height: clamp(1.25rem, 2.5rem, 3.375rem);
-        max-height: clamp(2.25rem, 3.75vw, 5.375rem);
-        max-width:50%;
-        margin-top: -10px;
+        display:none;
     }
 
     .btn {
-        min-width: 6.25rem;
+        font-size:1.15rem;
         padding: 0.625rem 0.875rem;
     }
 
@@ -801,8 +805,11 @@ footer h2{
         gap: 0.75rem;
     }
 
-    .daily,
-    .day {
+    .issue p{
+        display:none
+    }
+
+    .daily{
         min-width: auto;
     }
 
@@ -822,6 +829,10 @@ footer h2{
     .featured-grid .card {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    .letter-box-image,.memory-jar-image{
+        padding:0;
     }
 
     .footer-logo{
