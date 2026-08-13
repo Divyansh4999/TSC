@@ -40,6 +40,12 @@ h1{
     margin-bottom: 1rem;
 }
 
+.cursive{
+    font-family: Dancing Script,cursive;
+    font-size: 6rem;
+    color:var(--gold);
+}
+
 p{
     font-size:1rem;
 }
@@ -62,6 +68,25 @@ a:hover{
     transition:1s ease-in-out;
 }
 
+/*== For current tab/section in the header ==*/
+.current{
+    text-decoration: underline;
+    color:var(--gold);
+    transition: 3s ease-in;
+}
+/*===========================*/
+
+/*== For push buttons on different places */
+.push-buttons{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:1.5rem 0;
+}
+/*=======================================*/
+
 /*===========================
  Some classes
  =======================*/
@@ -70,6 +95,8 @@ img{
     display: block;
     width:100%;
     height:auto;
+    margin:0;
+    padding:0;
 }
 
 .division {
@@ -211,6 +238,7 @@ li a:hover{
     display: flex;
     flex-wrap:wrap;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 0;
     overflow: hidden;
@@ -317,6 +345,7 @@ h1{
     font-size: 1.1rem;
     color: var(--dark);
     font-style: italic;
+    text-align: center;
 }
 
 /*===================
@@ -563,12 +592,6 @@ h2::before{
 img{
     object-fit: cover;
     border-radius: 0.625rem;
-}
-
-.image{
-    width:100%;
-    border-radius:var(--radius);
-    margin-right:0.625rem;
 }
 
 .link{
