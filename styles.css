@@ -44,6 +44,7 @@ h1{
     font-family: Dancing Script,cursive;
     font-size: 6rem;
     color:var(--gold);
+    text-align:center;
 }
 
 p{
@@ -603,7 +604,7 @@ img{
     font-size:1.15rem;
 }
 
-.division > div{
+.division  div{
     display:flex;
     flex-direction:column;
     height:100%;
@@ -637,20 +638,7 @@ p{
     padding-top: 3rem;
 }
 
-.mood{
-    display:flex;
-    flex-direction:column;
-    border:0.0625rem solid var(--gold);
-    border-radius: var(--radius);
-    min-height:2.5rem;
-    max-height:5rem;
-    min-width:2.5rem;
-    max-width:5rem;
-    flex:1;
-    margin:1.25rem 0 0.3125rem;
-    padding:0.3125rem;
-    text-decoration: none;
-}
+
 
 /*======================
   Weekly schedule
@@ -663,12 +651,6 @@ p{
     flex:2;
 }
 
-@media (max-width: 768px) {
-    .activity-grid .card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
 /*=========================
     FOOTER
 ========================*/
@@ -677,42 +659,38 @@ footer{
     margin-top:0.9375rem;
 }
 
-.footer-grid{
-    display:flex;
-    justify-content: space-between;
-    align-items:flex-start;
+footer .division {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 1rem;
 }
 
-.footer-grid > img{
-    height:clamp(10vh,40vh,50vh);
-    object-fit: cover;
-    flex:1.25;
-    padding:0;
+.footer-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
 }
 
-.footer-grid article{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    padding:0.625rem;
-    margin-top:0.9375rem;
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.social-link-section{
-    display:flex;
-    flex:1;
-    align-items: center;
+.footer-links a {
+    color: var(--brown);
+    cursor:pointer;
+    padding:0.6rem;
+    border-bottom: 1px solid var(--light);
 }
 
-footer > p {
-    margin:auto;
-    text-align:center;
-}
-
-footer h2{
-    border-bottom: 0;
+input{
+    height:3rem;
+    padding:10px;
+    border-radius:var(--radius);
 }
 /*===================
     Phone Layout
@@ -861,6 +839,11 @@ footer h2{
     .footer-logo{
         overflow: hidden;
         max-width: 50%;
+    }
+
+    .activity-grid .card {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
