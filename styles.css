@@ -659,6 +659,15 @@ footer{
     margin-top:0.9375rem;
 }
 
+footer h3{
+    color:var(--gold);
+    font-weight: 800;
+    padding: 10px 0;
+    text-align:center;
+    border-bottom: 1px solid var(--gold);
+}
+
+
 footer .division {
     display: flex;
     flex-direction: row;
@@ -685,6 +694,11 @@ footer .division {
     cursor:pointer;
     padding:0.6rem;
     border-bottom: 1px solid var(--light);
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+    transition: 1s ease-out;
 }
 
 input{
@@ -822,7 +836,7 @@ input{
         margin-top: 0;
     }
 
-    .grid {
+    .grid , .division,.vertical-division{
         flex-direction: column;
         width: 100%;
     }
