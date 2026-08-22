@@ -263,6 +263,7 @@ li a:hover{
 hr{
    position:relative;
    color:var(--gold);
+   height:1px;
 }
 
 .hero-image {
@@ -855,9 +856,24 @@ input{
         max-width: 50%;
     }
 
+    footer .division{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .activity-grid .card {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    .grid{
+        gap:1px;
+    }
+
+    .engage .division{
+        flex-direction: row;
     }
 }
 
