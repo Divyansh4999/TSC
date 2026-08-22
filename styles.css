@@ -712,6 +712,10 @@ input{
 ====================*/
 
 @media (max-width: 768px) {
+    footer{
+        text-align: center;
+    }
+
     header {
         flex-wrap: wrap;
         justify-content:flex-start;
@@ -748,6 +752,9 @@ input{
       margin-top: -10px;
     }
 
+    .author .division{
+        flex-direction: row!important;
+    }
 
     nav {
         order: 3;
@@ -870,6 +877,10 @@ input{
 
     .grid{
         gap:1px;
+    }
+
+    .featured-grid{
+        gap: 1.5rem;
     }
 
     .engage .division{
