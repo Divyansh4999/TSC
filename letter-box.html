@@ -1,172 +1,387 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="The Soft Column" />
-    <meta name="description" content="The Soft Column is a quiet home for stories, essays, letters, and writer voices. Discover daily reads, featured issues, and community writing." />
-    <meta name="keywords" content="The Soft Column, TSC, essays, stories, daily writing, issues, writers, community prompt, reading" />
-    <meta name="theme-color" content="#f7eee0" />
-    <link rel="icon" href="images/The_Soft_Column.webp" type="image/webp" />
-    <link rel="apple-touch-icon" href="images/The_Soft_Column.webp" />
-    <link rel="canonical" href="https://yourdomain.com/" />
-    <meta property="og:site_name" content="The Soft Column" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="The Soft Column" />
-    <meta property="og:description" content="The Soft Column is a quiet home for stories, essays, letters, and writer voices." />
-    <meta property="og:image" content="images/The_Soft_Column.webp" />
-    <meta property="og:image:alt" content="The Soft Column logo and hero image" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Soft Column" />
-    <meta name="twitter:description" content="The Soft Column is a quiet home for stories, essays, letters, and writer voices." />
-    <meta name="twitter:image" content="images/The_Soft_Column.webp" />
-    <meta name="twitter:site" content="@the_soft_column" />
-    <meta name="twitter:creator" content="@the_soft_column" />
-    <meta name="robots" content="index, follow" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-    <title>The Soft Column</title>
-  </head>
-    <body id="top">
-     <header>
-
-        <div class="logo">
-                <img src="images/The_Soft_Column.webp" alt="The Soft Column Logo" />
-                <p>THE <span style="color:var(--gold)">SOFT</span> COLUMN</p>
-        </div>
-
-        <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="daily.html">Daily</a></li>
-            <li><a href="issue.html">Issues</a></li>
-            <li><a class="current" href="writers.html">Writers</a></li>
-            <li><a href="submit.html">Submit</a></li>
-            <li><a href="info.html">About</a></li>
-            </ul>
-        </nav>
-
-        <a class="btn join-us" href="#">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="The Soft Column" name="author"/>
+<meta content="The Soft Column is a quiet home for stories, essays, letters, and writer voices. Discover daily reads, featured issues, and community writing." name="description"/>
+<meta content="The Soft Column, TSC, essays, stories, daily writing, issues, writers, community prompt, reading" name="keywords"/>
+<meta content="#f7eee0" name="theme-color"/>
+<link href="images/The_Soft_Column.webp" rel="icon" type="image/webp"/>
+<link href="images/The_Soft_Column.webp" rel="apple-touch-icon"/>
+<link href="https://yourdomain.com/" rel="canonical"/>
+<meta content="The Soft Column" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="The Soft Column" property="og:title"/>
+<meta content="The Soft Column is a quiet home for stories, essays, letters, and writer voices." property="og:description"/>
+<meta content="images/The_Soft_Column.webp" property="og:image"/>
+<meta content="The Soft Column logo and hero image" property="og:image:alt"/>
+<meta content="website" property="og:type"/>
+<meta content="https://yourdomain.com/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Soft Column" name="twitter:title"/>
+<meta content="The Soft Column is a quiet home for stories, essays, letters, and writer voices." name="twitter:description"/>
+<meta content="images/The_Soft_Column.webp" name="twitter:image"/>
+<meta content="@the_soft_column" name="twitter:site"/>
+<meta content="@the_soft_column" name="twitter:creator"/>
+<meta content="index, follow" name="robots"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<title>The Soft Column</title>
+</head>
+<body id="top">
+<header>
+<div class="logo">
+<img alt="The Soft Column Logo" src="images/The_Soft_Column.webp"/>
+<p>THE <span style="color:var(--gold)">SOFT</span> COLUMN</p>
+</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="daily.html">Daily</a></li>
+<li><a href="issue.html">Issues</a></li>
+<li><a class="current" href="writers.html">Writers</a></li>
+<li><a href="submit.html">Submit</a></li>
+<li><a href="info.html">About</a></li>
+</ul>
+</nav>
+<div class="header-utils" style="position: relative;"><button class="search-toggle" id="search-toggle">🔍</button><button class="theme-toggle" id="theme-toggle">🌙</button><div class="search-container card" id="search-container" style="display: none; position: absolute; right: 0; top: 100%; z-index: 1000; padding: 0.5rem; border: 1px solid var(--border-dark); border-radius: 4px;"><input id="global-search-input" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;" type="text"/></div><a class="btn join-us" href="#">
             Join Us
-        </a>
-     </header>
-
-     <main>
-      <section class="hero">
-            <div class="hero-container">
-                <div class="hero-top">
-                 <h1><span class="cursive"> The Writers</span> </h1>
-                 <hr>
-                 <p class="tagline">Soul of The Soft Column</p>
-                </div>
-              </div>  
-              
-            </div>
-      </section>
-     </main>
-     
-     <footer>
-        <div class="vertical-division">  <!--for three vertical containers-->
-
-          <div class="division" style="border-bottom: 2px solid var(--background);">           <!--1st container-->
-            
-            <div class="vertical-division" style="border-right: 2px solid var(--background);">
-              <div>
-                <img src="images/TSC.jpg" alt="The Soft Column" loading="lazy" >
-              </div>
-              <div>
-                <p>The Soft Column (TSC) is a quiet space for readers, writers, and dreamers.</p>
-                <p>We share stories that feel like memories, thoughts that linger, and words that find a quiet home.</p>
-              </div>
-              <div class="cursive" style="font-size: 2rem;">
+        </a></div></header>
+<main>
+<section class="hero">
+<div class="hero-container">
+<div class="hero-top">
+<h1><span class="cursive">Letter Box</span></h1>
+<hr/>
+<p class="tagline">A letter. A memory. A confession. Send it anonymously.</p>
+</div>
+</div>
+</section>
+<section class="social-feed">
+<div class="grid" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+<div class="card" style="padding: 2rem;">
+<h3 style="margin-bottom: 1rem;">Share your thoughts</h3>
+<form id="post-form" style="display: flex; flex-direction: column; gap: 1rem;">
+<input id="post-author" placeholder="Your name (optional)" style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px;" type="text"/>
+<textarea id="post-content" placeholder="Write your anonymous letter here..." required="" rows="4" style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+<button class="btn post-submit-btn" style="align-self: flex-start;" type="submit">Post</button>
+</form>
+</div>
+<div id="posts-container" style="display: flex; flex-direction: column; gap: 1rem;">
+<!-- Posts will be loaded here via JS -->
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="vertical-division"> <!--for three vertical containers-->
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!--1st container-->
+<div class="vertical-division" style="border-right: 2px solid var(--background);">
+<div>
+<img alt="The Soft Column" loading="lazy" src="images/TSC.jpg"/>
+</div>
+<div>
+<p>The Soft Column (TSC) is a quiet space for readers, writers, and dreamers.</p>
+<p>We share stories that feel like memories, thoughts that linger, and words that find a quiet home.</p>
+</div>
+<div class="cursive" style="font-size: 2rem;">
                 Read. Write. Belong.
               </div>
-            </div>
+</div>
+<div class="division" style="flex:1.5;">
+<div class="footer-links-container">
+<h3>Explore</h3>
+<div class="footer-links">
+<a href="index.html">TSC Home</a>
+<a href="daily.html"> 📖 Daily</a>
+<a href="issue.html">Issues</a>
+<a href="writers.html"> ♡ Writers</a>
+<a href="letter-box.html"> ✉ Letter Box</a>
+<a href="community.html"> ☆ Community</a>
+<a href="lines.html">The Lines We Kept</a>
+</div>
+</div>
+<div class="footer-links-container">
+<h3>About</h3>
+<div class="footer-links">
+<a href="info.html">📧About TSC</a>
+<a href="index.html"> 🪶 Our Story</a>
+<a href="write-for-us.html"> ❄ Write for TSC</a>
+<a href="guidelines.txt"> 📖 Guidelines</a>
+<a href="faq.txt"> ? FAQs</a>
+</div>
+</div>
+<div class="footer-links-container">
+<h3>Connect</h3>
+<div class="footer-links">
+<a href="" style="display: none;">Instagram</a>
+<a href="emailto:thesoftcolumn@gmail.com"> 📧 Email</a>
+<a href="" style="display: none;">Twitter</a>
+<a href="" style="display: none;">Substack</a>
+</div>
+</div>
+</div>
+<div class="vertical-division" style="border-left: 2px solid var(--background);">
+<h3>Stay in the column</h3>
+<div>
+<p>Join our quiet Community and receive new stories, letters and thoughts in your inbox. </p>
+</div>
+<div class="vertical-division">
+<input name="email-community" placeholder="Enter Your Email" type="email"/>
+<button class="btn" for="email-community" type="submit">Subscribe</button>
+</div>
+<div>
+<img alt="A golden branch image" loading="lazy" src="images/golden-branch.jpg"/>
+</div>
+</div>
+</div>
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!-- 2nd container-->
+<div class="division" style="border-right: 2px solid var(--background);">
+<a href="" style="display: none;"><img alt=" instagram logo" src=""/></a>
+<a href="" style="display: none;"><img alt=" substack logo" src=""/></a>
+<a href="emailto:thesoftcolumn@gmail.com"><img alt="gmail logo" src=""/></a>
+</div>
+<div class="vertical-division">
+<p>Some stories stay with us forever.</p>
+<p>This is where we keep them.</p>
+</div>
+<div class="" style="border-left: 2px solid var(--background);">
+<a href="#top">Back To Top ↑ </a>
+</div>
+</div>
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!--3rd container-->
+<div class="">© 2026 The Soft Column. All rights reserved.</div>
+<div class=""> Made with words &amp; quiet thoughts.</div>
+<div class=""> Privacy Policy | Terms of use </div>
+</div>
+</div>
+</footer>
+<script>
+        // Global Theme and Search Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
 
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️';
+            }
 
-            <div class="division" style="flex:1.5;"> 
-              <div class="footer-links-container">
-                <h3>Explore</h3>
-                <div class="footer-links">
-                  <a href="index.html">TSC Home</a>
-                  <a href="daily.html"> 📖 Daily</a>
-                  <a href="issue.html">Issues</a>
-                  <a href="writers.html"> ♡ Writers</a>
-                  <a href="letter-box.html"> ✉ Letter Box</a>
-                  <a href="community.html"> ☆ Community</a>
-                  <a href="lines.html">The Lines We Kept</a>
-                </div>
-              </div>
-              <div class="footer-links-container">
-                <h3>About</h3>
-                <div class="footer-links">
-                  <a href="info.html">📧About TSC</a>
-                  <a href="index.html"> 🪶 Our Story</a>
-                  <a href="write-for-us.html"> ❄ Write for TSC</a>
-                  <a href="guidelines.txt"> 📖 Guidelines</a>
-                  <a href="faq.txt"> ? FAQs</a>
-                </div>  
-              </div>
-              <div class="footer-links-container">
-                <h3>Connect</h3>
-                <div class="footer-links">
-                  <a href="">Instagram</a>
-                  <a href="emailto:thesoftcolumn@gmail.com"> 📧 Email</a>
-                  <a href="">Twitter</a>
-                  <a href="">Substack</a>
-                </div>  
-              </div>
-            </div>
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        themeToggle.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        themeToggle.textContent = '🌙';
+                    }
+                });
+            }
 
-            <div class="vertical-division" style="border-left: 2px solid var(--background);">
-              <h3>Stay in the column</h3>
-              <div>
-                <p>Join our quiet Community and receive new stories, letters and thoughts in your inbox. </p>
-              </div>
-              <div class="vertical-division">
-                <input  type="email" placeholder="Enter Your Email" name="email-community">
-                <button type="submit" class="btn" for="email-community" >Subscribe</button> 
-              </div>
-              <div>
-                <img src="images/golden-branch.jpg" alt="A golden branch image" loading="lazy">
-              </div>
-            </div>
+            // Search setup (UI toggle)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchContainer = document.getElementById('search-container');
+            const searchInput = document.getElementById('global-search-input');
 
-          </div>
+            if (searchToggle && searchContainer) {
+                searchToggle.addEventListener('click', () => {
+                    if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+                        searchContainer.style.display = 'flex';
+                        if (searchInput) searchInput.focus();
+                    } else {
+                        searchContainer.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+<script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const searchInput = document.getElementById('global-search-input');
+                if (!searchInput) return;
 
-          <div class="division" style="border-bottom: 2px solid var(--background);">       <!-- 2nd container-->
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const isIndex = false;
 
-            <div class="division" style="border-right: 2px solid var(--background);">
-              <a href=""><img src="" alt=" instagram logo"></a>
-              <a href=""><img src="" alt=" substack logo"></a>
-              <a href="emailto:thesoftcolumn@gmail.com"><img src="" alt="gmail logo"></a>
-            </div>
+                    if (isIndex) {
+                        // Home page: Search for sections
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(section => {
+                            const text = section.textContent.toLowerCase();
+                            if (text.includes(query) || query === '') {
+                                section.style.display = '';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    } else {
+                        // Other pages: Search for articles or posts
+                        const postCards = document.querySelectorAll('.post-card');
+                        if (postCards.length > 0) {
+                            postCards.forEach(card => {
+                                const text = card.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        } else {
+                            const articles = document.querySelectorAll('article');
+                            articles.forEach(article => {
+                                const text = article.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    article.style.display = '';
+                                } else {
+                                    article.style.display = 'none';
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        </script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageKey = 'tsc_letters';
+            const form = document.getElementById('post-form');
+            const postsContainer = document.getElementById('posts-container');
 
-            <div class="vertical-division">
-              <p>Some stories stay with us forever.</p>
-              <p>This is where we keep them.</p>
-            </div>
+            // Default data
+            const defaultData = [
+    { id: '_a1b2c3d4e', content: 'I never told you this, but seeing you smile was the highlight of my difficult year. I hope you are doing well wherever you are.', author: 'Anonymous', timestamp: '2023-10-10T18:45:00Z', likes: 24 },
+    { id: '_e4d3c2b1a', content: 'To my younger self: stop worrying so much about the timelines. Things will unfold exactly as they should.', author: 'A friend', timestamp: '2023-10-12T11:20:00Z', likes: 15 }
+];
 
-            <div class="" style="border-left: 2px solid var(--background);">
-              <a href="#top">Back To Top ↑ </a> 
-            </div>
-          </div>
+            // Initialize storage
+            if (!localStorage.getItem(storageKey)) {
+                localStorage.setItem(storageKey, JSON.stringify(defaultData));
+            }
 
-          <div class="division" style="border-bottom: 2px solid var(--background);">         <!--3rd container--> 
+            // Function to sanitize and set text
+            function createElementWithText(tag, text, styles = '') {
+                const el = document.createElement(tag);
+                el.textContent = text;
+                if (styles) el.style.cssText = styles;
+                return el;
+            }
 
-            <div class="">&copy; 2026 The Soft Column. All rights reserved.</div>
-            <div class=""> Made with words & quiet thoughts.</div>
-            <div class=""> Privacy Policy | Terms of use </div>
+            // Generate unique ID
+            function generateId() {
+                return '_' + Math.random().toString(36).substr(2, 9);
+            }
 
-          </div>
+            // Load posts
+            function loadPosts() {
+                const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                postsContainer.innerHTML = '';
 
-        </div>
-      </footer>
+                if (posts.length === 0) {
+                    postsContainer.innerHTML = '<p style="text-align: center; color: #666;">No posts yet. Be the first to share!</p>';
+                    return;
+                }
 
-    </body>
-</html>      
+                posts.forEach((post, index) => {
+                    if (!post.id) {
+                        post.id = generateId();
+                        posts[index] = post;
+                    }
+                    if (post.likes === undefined) post.likes = 0;
+
+                    const postEl = document.createElement('div');
+                    postEl.className = 'card post-card';
+                    postEl.style.padding = '1.5rem';
+                    postEl.dataset.id = post.id;
+
+                    const date = new Date(post.timestamp).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+                    const contentP = createElementWithText('p', post.content, 'font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;');
+
+                    const metaDiv = document.createElement('div');
+                    metaDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem;';
+
+                    const authorSpan = createElementWithText('span', '- ' + (post.author || 'Anonymous'));
+                    const dateSpan = createElementWithText('span', date);
+
+                    const actionsDiv = document.createElement('div');
+                    actionsDiv.style.cssText = 'display: flex; gap: 1rem; align-items: center; margin-left: 1rem;';
+
+                    const likeBtn = createElementWithText('button', '❤️ ' + post.likes, 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
+                    likeBtn.onclick = () => {
+                        post.likes++;
+                        localStorage.setItem(storageKey, JSON.stringify(posts));
+                        likeBtn.textContent = '❤️ ' + post.likes;
+                    };
+
+                    const shareBtn = createElementWithText('button', '🔗 Share', 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
+                    shareBtn.onclick = () => {
+                        navigator.clipboard.writeText(post.content + '\n\n- ' + (post.author || 'Anonymous')).then(() => {
+                            const origText = shareBtn.textContent;
+                            shareBtn.textContent = '✅ Copied';
+                            setTimeout(() => shareBtn.textContent = origText, 2000);
+                        });
+                    };
+
+                    actionsDiv.appendChild(likeBtn);
+                    actionsDiv.appendChild(shareBtn);
+
+                    metaDiv.appendChild(authorSpan);
+
+                    const rightMetaDiv = document.createElement('div');
+                    rightMetaDiv.style.cssText = 'display: flex; align-items: center;';
+                    rightMetaDiv.appendChild(dateSpan);
+                    rightMetaDiv.appendChild(actionsDiv);
+
+                    metaDiv.appendChild(rightMetaDiv);
+
+                    postEl.appendChild(contentP);
+                    postEl.appendChild(metaDiv);
+
+                    postsContainer.appendChild(postEl);
+                });
+
+                // save in case IDs were generated
+                localStorage.setItem(storageKey, JSON.stringify(posts));
+            }
+
+            // Handle submit
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const contentInput = document.getElementById('post-content');
+                const authorInput = document.getElementById('post-author');
+
+                const newPost = {
+                    id: generateId(),
+                    content: contentInput.value.trim(),
+                    author: authorInput.value.trim() || 'Anonymous',
+                    timestamp: new Date().toISOString(),
+                    likes: 0
+                };
+
+                if (newPost.content) {
+                    const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                    posts.unshift(newPost);
+                    localStorage.setItem(storageKey, JSON.stringify(posts));
+
+                    contentInput.value = '';
+                    authorInput.value = '';
+                    loadPosts();
+                }
+            });
+
+            // Initial load
+            loadPosts();
+        });
+    </script>
+
+</body>
+</html>
