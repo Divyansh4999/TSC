@@ -49,10 +49,9 @@
 <li><a href="info.html">About</a></li>
 </ul>
 </nav>
-<a class="btn join-us" href="#">
+<div class="header-utils" style="position: relative;"><button class="search-toggle" id="search-toggle">🔍</button><button class="theme-toggle" id="theme-toggle">🌙</button><div class="search-container card" id="search-container" style="display: none; position: absolute; right: 0; top: 100%; z-index: 1000; padding: 0.5rem; border: 1px solid var(--border-dark); border-radius: 4px;"><input id="global-search-input" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;" type="text"/></div><a class="btn join-us" href="#">
             Join Us
-        </a>
-</header>
+        </a></div></header>
 <main><section class="hero"><div class="hero-container"><div class="hero-top"><h1><span class="cursive">Issue 002</span></h1><hr/><p>The second coming.</p></div></div></section></main>
 <footer>
 <div class="vertical-division"> <!--for three vertical containers-->
@@ -137,5 +136,98 @@
 </div>
 </div>
 </footer>
+<script>
+        // Global Theme and Search Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️';
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        themeToggle.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        themeToggle.textContent = '🌙';
+                    }
+                });
+            }
+
+            // Search setup (UI toggle)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchContainer = document.getElementById('search-container');
+            const searchInput = document.getElementById('global-search-input');
+
+            if (searchToggle && searchContainer) {
+                searchToggle.addEventListener('click', () => {
+                    if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+                        searchContainer.style.display = 'flex';
+                        if (searchInput) searchInput.focus();
+                    } else {
+                        searchContainer.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+<script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const searchInput = document.getElementById('global-search-input');
+                if (!searchInput) return;
+
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const isIndex = false;
+
+                    if (isIndex) {
+                        // Home page: Search for sections
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(section => {
+                            const text = section.textContent.toLowerCase();
+                            if (text.includes(query) || query === '') {
+                                section.style.display = '';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    } else {
+                        // Other pages: Search for articles or posts
+                        // First check for posts (community, letters, memories)
+                        const postCards = document.querySelectorAll('.post-card');
+                        if (postCards.length > 0) {
+                            postCards.forEach(card => {
+                                const text = card.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        } else {
+                            // Articles (Daily, Issues, Writers)
+                            const articles = document.querySelectorAll('article');
+                            articles.forEach(article => {
+                                const text = article.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    article.style.display = '';
+                                } else {
+                                    article.style.display = 'none';
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        </script>
+
+
 </body>
 </html>

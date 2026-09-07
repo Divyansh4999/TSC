@@ -49,10 +49,9 @@
 <li><a href="info.html">About</a></li>
 </ul>
 </nav>
-<a class="btn join-us" href="#">
+<div class="header-utils" style="position: relative;"><button class="search-toggle" id="search-toggle">🔍</button><button class="theme-toggle" id="theme-toggle">🌙</button><div class="search-container card" id="search-container" style="display: none; position: absolute; right: 0; top: 100%; z-index: 1000; padding: 0.5rem; border: 1px solid var(--border-dark); border-radius: 4px;"><input id="global-search-input" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;" type="text"/></div><a class="btn join-us" href="#">
             Join Us
-        </a>
-</header>
+        </a></div></header>
 <main>
 <section class="hero">
 <div class="hero-container">
@@ -78,86 +77,6 @@
 </div>
 </div>
 </section>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const storageKey = 'tsc_letters';
-            const form = document.getElementById('post-form');
-            const postsContainer = document.getElementById('posts-container');
-            
-            // Function to sanitize and set text
-            function createElementWithText(tag, text, styles = '') {
-                const el = document.createElement(tag);
-                el.textContent = text;
-                if (styles) el.style.cssText = styles;
-                return el;
-            }
-
-            // Load posts
-            function loadPosts() {
-                const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
-                postsContainer.innerHTML = '';
-
-                if (posts.length === 0) {
-                    postsContainer.innerHTML = '<p style="text-align: center; color: #666;">No posts yet. Be the first to share!</p>';
-                    return;
-                }
-
-                posts.forEach(post => {
-                    const postEl = document.createElement('div');
-                    postEl.className = 'card';
-                    postEl.style.padding = '1.5rem';
-
-                    const date = new Date(post.timestamp).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-
-                    const contentP = createElementWithText('p', post.content, 'font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;');
-
-                    const metaDiv = document.createElement('div');
-                    metaDiv.style.cssText = 'display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem;';
-
-                    const authorSpan = createElementWithText('span', '- ' + (post.author || 'Anonymous'));
-                    const dateSpan = createElementWithText('span', date);
-
-                    metaDiv.appendChild(authorSpan);
-                    metaDiv.appendChild(dateSpan);
-
-                    postEl.appendChild(contentP);
-                    postEl.appendChild(metaDiv);
-
-                    postsContainer.appendChild(postEl);
-                });
-            }
-
-            // Handle submit
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const contentInput = document.getElementById('post-content');
-                const authorInput = document.getElementById('post-author');
-
-                const newPost = {
-                    content: contentInput.value.trim(),
-                    author: authorInput.value.trim() || 'Anonymous',
-                    timestamp: new Date().toISOString()
-                };
-
-                if (newPost.content) {
-                    const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
-                    // Add to beginning of array
-                    posts.unshift(newPost);
-                    localStorage.setItem(storageKey, JSON.stringify(posts));
-
-                    // Reset form
-                    contentInput.value = '';
-                    authorInput.value = '';
-
-                    // Reload
-                    loadPosts();
-                }
-            });
-
-            // Initial load
-            loadPosts();
-        });
-    </script>
 </main>
 <footer>
 <div class="vertical-division"> <!--for three vertical containers-->
@@ -242,5 +161,227 @@
 </div>
 </div>
 </footer>
+<script>
+        // Global Theme and Search Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️';
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        themeToggle.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        themeToggle.textContent = '🌙';
+                    }
+                });
+            }
+
+            // Search setup (UI toggle)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchContainer = document.getElementById('search-container');
+            const searchInput = document.getElementById('global-search-input');
+
+            if (searchToggle && searchContainer) {
+                searchToggle.addEventListener('click', () => {
+                    if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+                        searchContainer.style.display = 'flex';
+                        if (searchInput) searchInput.focus();
+                    } else {
+                        searchContainer.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+<script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const searchInput = document.getElementById('global-search-input');
+                if (!searchInput) return;
+
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const isIndex = false;
+
+                    if (isIndex) {
+                        // Home page: Search for sections
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(section => {
+                            const text = section.textContent.toLowerCase();
+                            if (text.includes(query) || query === '') {
+                                section.style.display = '';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    } else {
+                        // Other pages: Search for articles or posts
+                        const postCards = document.querySelectorAll('.post-card');
+                        if (postCards.length > 0) {
+                            postCards.forEach(card => {
+                                const text = card.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        } else {
+                            const articles = document.querySelectorAll('article');
+                            articles.forEach(article => {
+                                const text = article.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    article.style.display = '';
+                                } else {
+                                    article.style.display = 'none';
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        </script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageKey = 'tsc_letters';
+            const form = document.getElementById('post-form');
+            const postsContainer = document.getElementById('posts-container');
+
+            // Default data
+            const defaultData = [
+    { id: '_a1b2c3d4e', content: 'I never told you this, but seeing you smile was the highlight of my difficult year. I hope you are doing well wherever you are.', author: 'Anonymous', timestamp: '2023-10-10T18:45:00Z', likes: 24 },
+    { id: '_e4d3c2b1a', content: 'To my younger self: stop worrying so much about the timelines. Things will unfold exactly as they should.', author: 'A friend', timestamp: '2023-10-12T11:20:00Z', likes: 15 }
+];
+
+            // Initialize storage
+            if (!localStorage.getItem(storageKey)) {
+                localStorage.setItem(storageKey, JSON.stringify(defaultData));
+            }
+
+            // Function to sanitize and set text
+            function createElementWithText(tag, text, styles = '') {
+                const el = document.createElement(tag);
+                el.textContent = text;
+                if (styles) el.style.cssText = styles;
+                return el;
+            }
+
+            // Generate unique ID
+            function generateId() {
+                return '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            // Load posts
+            function loadPosts() {
+                const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                postsContainer.innerHTML = '';
+
+                if (posts.length === 0) {
+                    postsContainer.innerHTML = '<p style="text-align: center; color: #666;">No posts yet. Be the first to share!</p>';
+                    return;
+                }
+
+                posts.forEach((post, index) => {
+                    if (!post.id) {
+                        post.id = generateId();
+                        posts[index] = post;
+                    }
+                    if (post.likes === undefined) post.likes = 0;
+
+                    const postEl = document.createElement('div');
+                    postEl.className = 'card post-card';
+                    postEl.style.padding = '1.5rem';
+                    postEl.dataset.id = post.id;
+
+                    const date = new Date(post.timestamp).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+                    const contentP = createElementWithText('p', post.content, 'font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;');
+
+                    const metaDiv = document.createElement('div');
+                    metaDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem;';
+
+                    const authorSpan = createElementWithText('span', '- ' + (post.author || 'Anonymous'));
+                    const dateSpan = createElementWithText('span', date);
+
+                    const actionsDiv = document.createElement('div');
+                    actionsDiv.style.cssText = 'display: flex; gap: 1rem; align-items: center; margin-left: 1rem;';
+
+                    const likeBtn = createElementWithText('button', '❤️ ' + post.likes, 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
+                    likeBtn.onclick = () => {
+                        post.likes++;
+                        localStorage.setItem(storageKey, JSON.stringify(posts));
+                        likeBtn.textContent = '❤️ ' + post.likes;
+                    };
+
+                    const shareBtn = createElementWithText('button', '🔗 Share', 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
+                    shareBtn.onclick = () => {
+                        navigator.clipboard.writeText(post.content + '\n\n- ' + (post.author || 'Anonymous')).then(() => {
+                            const origText = shareBtn.textContent;
+                            shareBtn.textContent = '✅ Copied';
+                            setTimeout(() => shareBtn.textContent = origText, 2000);
+                        });
+                    };
+
+                    actionsDiv.appendChild(likeBtn);
+                    actionsDiv.appendChild(shareBtn);
+
+                    metaDiv.appendChild(authorSpan);
+
+                    const rightMetaDiv = document.createElement('div');
+                    rightMetaDiv.style.cssText = 'display: flex; align-items: center;';
+                    rightMetaDiv.appendChild(dateSpan);
+                    rightMetaDiv.appendChild(actionsDiv);
+
+                    metaDiv.appendChild(rightMetaDiv);
+
+                    postEl.appendChild(contentP);
+                    postEl.appendChild(metaDiv);
+
+                    postsContainer.appendChild(postEl);
+                });
+
+                // save in case IDs were generated
+                localStorage.setItem(storageKey, JSON.stringify(posts));
+            }
+
+            // Handle submit
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const contentInput = document.getElementById('post-content');
+                const authorInput = document.getElementById('post-author');
+
+                const newPost = {
+                    id: generateId(),
+                    content: contentInput.value.trim(),
+                    author: authorInput.value.trim() || 'Anonymous',
+                    timestamp: new Date().toISOString(),
+                    likes: 0
+                };
+
+                if (newPost.content) {
+                    const posts = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                    posts.unshift(newPost);
+                    localStorage.setItem(storageKey, JSON.stringify(posts));
+
+                    contentInput.value = '';
+                    authorInput.value = '';
+                    loadPosts();
+                }
+            });
+
+            // Initial load
+            loadPosts();
+        });
+    </script>
+
 </body>
 </html>
