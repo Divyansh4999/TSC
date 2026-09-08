@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="The Soft Column" name="author"/>
+<meta content="The Soft Column Author Page" name="description"/>
+<meta content="#f7eee0" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="images/The_Soft_Column.webp" rel="icon" type="image/webp"/>
+<title>Author Column - The Soft Column</title>
+</head>
+<body id="top">
+<!-- Header injected via script or we can just copy it from index.html -->
+<header>
+<div class="logo">
+<img alt="The Soft Column Logo" src="images/The_Soft_Column.webp"/>
+<p>THE <span style="color:var(--gold)">SOFT</span> COLUMN</p>
+</div>
+<nav>
+<ul>
+<li><a class="current" href="index.html">Home</a></li>
+<li><a href="daily.html">Daily</a></li>
+<li><a href="issue.html">Issues</a></li>
+<li><a href="writers.html">Writers</a></li>
+<li><a href="submit.html">Submit</a></li>
+<li><a href="info.html">About</a></li>
+</ul>
+</nav>
+<div class="header-utils" style="position: relative;"><button class="search-toggle" id="search-toggle">🔍</button><button class="theme-toggle" id="theme-toggle">🌙</button><div class="search-container card" id="search-container" style="display: none; position: absolute; right: 0; top: 100%; z-index: 1000; padding: 0.5rem; border: 1px solid var(--border-dark); border-radius: 4px;"><input id="global-search-input" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;" type="text"/></div><a class="btn join-us" href="#">
+            Join Us
+        </a></div></header>
+<main>
+<section class="hero" style="min-height: 40vh; display: flex; align-items: center; justify-content: center;">
+<div class="hero-container" style="text-align: center;">
+<div class="hero-top">
+<h1><span class="cursive" id="author-name-title">Author Name</span></h1>
+<hr/>
+<p class="tagline">A collection of thoughts.</p>
+</div>
+</div>
+</section>
+<!-- Book-like layout -->
+<section id="author-book" style="max-width: 1200px; margin: -5rem auto 4rem auto; padding: 0 1rem; position: relative; z-index: 10;">
+<div class="book-container card" style="display: flex; flex-direction: column; md-flex-direction: row; background: var(--background); border: 2px solid var(--gold); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden;">
+<!-- Left Page: Author Info -->
+<div class="book-page left-page" style="flex: 1; padding: 3rem; border-right: 1px dashed var(--gold); border-bottom: 1px dashed var(--gold);">
+<div style="text-align: center; margin-bottom: 2rem;">
+<img alt="Author" id="author-img" src="images/default-pfp.webp" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); padding: 5px;"/>
+<h2 id="author-username" style="margin-top: 1rem; font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: var(--gold);">Username</h2>
+<p id="author-handle" style="color: #666; font-style: italic;">@handle</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;">Biography</h3>
+<p id="author-bio" style="line-height: 1.8; margin-top: 1rem;">A quiet observer of life, weaving memories into words. Believes in the magic of slow mornings and cold coffee.</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;">Tags</h3>
+<div id="author-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+<span style="background: var(--gold); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Poetry</span>
+<span style="background: var(--gold); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Memoirs</span>
+</div>
+</div>
+<div style="text-align: center; margin-top: 3rem;">
+<button class="btn" id="follow-btn" style="width: 100%; font-size: 1.1rem; padding: 0.8rem;">Follow Author</button>
+</div>
+</div>
+<!-- Right Page: Author Writings -->
+<div class="book-page right-page" style="flex: 2; padding: 3rem; background: rgba(255,255,255,0.05);">
+<h3 style="font-size: 1.8rem; text-align: center; margin-bottom: 2rem; font-family: 'Dancing Script', cursive; color: var(--gold);">Collected Writings</h3>
+<div id="author-writings-container" style="display: flex; flex-direction: column; gap: 2rem;">
+<!-- Writings will be dynamically injected here -->
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="vertical-division"> <!--for three vertical containers-->
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!--1st container-->
+<div class="vertical-division" style="border-right: 2px solid var(--background);">
+<div>
+<img alt="The Soft Column" loading="lazy" src="images/TSC.jpg"/>
+</div>
+<div>
+<p>The Soft Column (TSC) is a quiet space for readers, writers, and dreamers.</p>
+<p>We share stories that feel like memories, thoughts that linger, and words that find a quiet home.</p>
+</div>
+<div class="cursive" style="font-size: 2rem;">
+                Read. Write. Belong.
+              </div>
+</div>
+<div class="division" style="flex:1.5;">
+<div class="footer-links-container">
+<h3>Explore</h3>
+<div class="footer-links">
+<a href="index.html">TSC Home</a>
+<a href="daily.html"> 📖 Daily</a>
+<a href="issue.html">Issues</a>
+<a href="writers.html"> ♡ Writers</a>
+<a href="letter-box.html"> ✉ Letter Box</a>
+<a href="community.html"> ☆ Community</a>
+<a href="lines.html">The Lines We Kept</a>
+</div>
+</div>
+<div class="footer-links-container">
+<h3>About</h3>
+<div class="footer-links">
+<a href="info.html">📧About TSC</a>
+<a href="index.html"> 🪶 Our Story</a>
+<a href="write-for-us.html"> ❄ Write for TSC</a>
+<a href="guidelines.txt"> 📖 Guidelines</a>
+<a href="faq.txt"> ? FAQs</a>
+</div>
+</div>
+<div class="footer-links-container">
+<h3>Connect</h3>
+<div class="footer-links">
+<a href="" style="display: none;">Instagram</a>
+<a href="emailto:thesoftcolumn@gmail.com"> 📧 Email</a>
+<a href="" style="display: none;">Twitter</a>
+<a href="" style="display: none;">Substack</a>
+</div>
+</div>
+</div>
+<div class="vertical-division" style="border-left: 2px solid var(--background);">
+<h3>Stay in the column</h3>
+<div>
+<p>Join our quiet Community and receive new stories, letters and thoughts in your inbox. </p>
+</div>
+<div class="vertical-division">
+<input name="email-community" placeholder="Enter Your Email" type="email"/>
+<button class="btn" for="email-community" type="submit">Subscribe</button>
+</div>
+<div>
+<img alt="A golden branch image" loading="lazy" src="images/golden-branch.jpg"/>
+</div>
+</div>
+</div>
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!-- 2nd container-->
+<div class="division" style="border-right: 2px solid var(--background);">
+<a href="" style="display: none;"><img alt=" instagram logo" src=""/></a>
+<a href="" style="display: none;"><img alt=" substack logo" src=""/></a>
+<a href="emailto:thesoftcolumn@gmail.com"><img alt="gmail logo" src=""/></a>
+</div>
+<div class="vertical-division">
+<p>Some stories stay with us forever.</p>
+<p>This is where we keep them.</p>
+</div>
+<div class="" style="border-left: 2px solid var(--background);">
+<a class="btn" href="#top">Back To Top ↑ </a>
+</div>
+</div>
+<div class="division" style="border-bottom: 2px solid var(--background);"> <!--3rd container-->
+<div class="">© 2026 The Soft Column. All rights reserved.</div>
+<div class=""> Made with words &amp; quiet thoughts.</div>
+<div class=""> Privacy Policy | Terms of use </div>
+</div>
+</div>
+</footer>
+<script>
+        // Global Theme and Search Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️';
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        themeToggle.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        themeToggle.textContent = '🌙';
+                    }
+                });
+            }
+
+            // Search setup (UI toggle)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchContainer = document.getElementById('search-container');
+            const searchInput = document.getElementById('global-search-input');
+
+            if (searchToggle && searchContainer) {
+                searchToggle.addEventListener('click', () => {
+                    if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+                        searchContainer.style.display = 'flex';
+                        if (searchInput) searchInput.focus();
+                    } else {
+                        searchContainer.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script><script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const searchInput = document.getElementById('global-search-input');
+                if (!searchInput) return;
+
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const isIndex = true;
+
+                    if (isIndex) {
+                        // Home page: Search for sections
+                        const sections = document.querySelectorAll('section');
+                        sections.forEach(section => {
+                            const text = section.textContent.toLowerCase();
+                            if (text.includes(query) || query === '') {
+                                section.style.display = '';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    } else {
+                        // Other pages: Search for articles or posts
+                        // First check for posts (community, letters, memories)
+                        const postCards = document.querySelectorAll('.post-card');
+                        if (postCards.length > 0) {
+                            postCards.forEach(card => {
+                                const text = card.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        } else {
+                            // Articles (Daily, Issues, Writers)
+                            const articles = document.querySelectorAll('article');
+                            articles.forEach(article => {
+                                const text = article.textContent.toLowerCase();
+                                if (text.includes(query) || query === '') {
+                                    article.style.display = '';
+                                } else {
+                                    article.style.display = 'none';
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        </script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get author name from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const authorName = urlParams.get('name') || 'Anonymous';
+
+            // 2. Set Author Info
+            document.title = authorName + ' - The Soft Column';
+            document.getElementById('author-name-title').textContent = authorName;
+            document.getElementById('author-username').textContent = authorName;
+            document.getElementById('author-handle').textContent = '@' + authorName.toLowerCase().replace(/\s+/g, '');
+
+            // Assign a random default profile picture if one isn't passed (we can mock this based on name length)
+            const pfpIndex = (authorName.length % 4) + 1;
+            const pfpMap = {
+                1: 'images/boy-pfp.jpg',
+                2: 'images/girlpfp.jpg',
+                3: 'images/default-boy-pfp.jpg',
+                4: 'images/default-pfp.webp'
+            };
+            document.getElementById('author-img').src = pfpMap[pfpIndex];
+
+            // 3. Follow Button Logic
+            const followBtn = document.getElementById('follow-btn');
+            const followKey = 'tsc_following_' + authorName;
+
+            if (localStorage.getItem(followKey) === 'true') {
+                followBtn.textContent = 'Following';
+                followBtn.style.background = 'transparent';
+                followBtn.style.border = '1px solid var(--gold)';
+                followBtn.style.color = 'var(--gold)';
+            }
+
+            followBtn.addEventListener('click', () => {
+                if (localStorage.getItem(followKey) === 'true') {
+                    localStorage.removeItem(followKey);
+                    followBtn.textContent = 'Follow Author';
+                    followBtn.style.background = 'var(--background)'; // Original style in css
+                    followBtn.style.border = '1px solid var(--text)';
+                    followBtn.style.color = 'var(--text)';
+                    // Re-apply hover states if necessary, but simpler to just reload or reset inline styles.
+                    // For prototype, just toggle classes or basic styles.
+                    followBtn.removeAttribute('style');
+                    followBtn.style.width = '100%';
+                    followBtn.style.fontSize = '1.1rem';
+                    followBtn.style.padding = '0.8rem';
+                } else {
+                    localStorage.setItem(followKey, 'true');
+                    followBtn.textContent = 'Following';
+                    followBtn.style.background = 'transparent';
+                    followBtn.style.border = '1px solid var(--gold)';
+                    followBtn.style.color = 'var(--gold)';
+                }
+            });
+
+            // 4. Fetch Writings from LocalStorage social feeds
+            const containers = ['tsc_community_posts', 'tsc_letters', 'tsc_memories'];
+            let allPosts = [];
+
+            containers.forEach(key => {
+                const posts = JSON.parse(localStorage.getItem(key) || '[]');
+                allPosts = allPosts.concat(posts.map(p => ({...p, source: key})));
+            });
+
+            // Filter by author name (case insensitive)
+            const authorPosts = allPosts.filter(p => p.author.toLowerCase() === authorName.toLowerCase());
+
+            // Sort by date descending
+            authorPosts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            const writingsContainer = document.getElementById('author-writings-container');
+
+            if (authorPosts.length === 0) {
+                writingsContainer.innerHTML = '<p style="text-align: center; color: #666; font-style: italic; margin-top: 2rem;">No writings published yet.</p>';
+                return;
+            }
+
+            function createElementWithText(tag, text, styles = '') {
+                const el = document.createElement(tag);
+                el.textContent = text;
+                if (styles) el.style.cssText = styles;
+                return el;
+            }
+
+            authorPosts.forEach(post => {
+                const postEl = document.createElement('div');
+                postEl.className = 'post-card'; // re-use post-card for global search if needed
+                postEl.style.cssText = 'padding: 1.5rem; border-bottom: 1px solid var(--gold); border-left: 3px solid var(--gold); margin-bottom: 1.5rem;';
+
+                const date = new Date(post.timestamp).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+
+                let sourceLabel = 'Community Post';
+                if (post.source === 'tsc_letters') sourceLabel = 'Letter Box';
+                if (post.source === 'tsc_memories') sourceLabel = 'Memory Jar';
+
+                const metaTop = document.createElement('div');
+                metaTop.style.cssText = 'display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;';
+                metaTop.appendChild(createElementWithText('span', sourceLabel));
+                metaTop.appendChild(createElementWithText('span', date));
+
+                const contentP = createElementWithText('p', post.content, 'font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;');
+
+                const metaBottom = document.createElement('div');
+                metaBottom.style.cssText = 'display: flex; gap: 1rem; font-size: 0.9rem; color: #666;';
+                metaBottom.appendChild(createElementWithText('span', '❤️ ' + (post.likes || 0)));
+
+                postEl.appendChild(metaTop);
+                postEl.appendChild(contentP);
+                postEl.appendChild(metaBottom);
+
+                writingsContainer.appendChild(postEl);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -962,3 +962,14 @@ body.dark-mode .theme-toggle,
 body.dark-mode .search-toggle {
   color: var(--text-dark);
 }
+
+/* Author Book Layout Utilities */
+@media (min-width: 768px) {
+    .book-container {
+        flex-direction: row !important;
+    }
+    .left-page {
+        border-right: 2px dashed var(--gold) !important;
+        border-bottom: none !important;
+    }
+}
