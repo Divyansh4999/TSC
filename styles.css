@@ -973,3 +973,532 @@ body.dark-mode .search-toggle {
         border-bottom: none !important;
     }
 }
+
+/* ====== Header & Mobile Menu CSS ====== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+.desktop-nav {
+    display: none;
+}
+.desktop-only {
+    display: none !important;
+}
+
+.header-utils {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle,
+.search-toggle,
+.mobile-menu-btn,
+.close-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+body.dark-mode .theme-toggle,
+body.dark-mode .search-toggle,
+body.dark-mode .mobile-menu-btn,
+body.dark-mode .close-menu-btn {
+    color: var(--text-dark);
+}
+
+.search-container {
+    position: absolute;
+    right: 5rem;
+    top: 100%;
+    z-index: 1000;
+    padding: 0.5rem;
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    background: var(--background);
+}
+
+body.dark-mode .search-container {
+    background: var(--background-dark);
+}
+
+.search-container input,
+.mobile-search input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    outline: none;
+}
+
+/* Mobile Slide-out Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -75vw;
+    width: 75vw;
+    height: 100vh;
+    background-color: var(--background);
+    z-index: 2000;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode .mobile-menu {
+    background-color: var(--background-dark);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+body.dark-mode .mobile-menu-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu-content {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.mobile-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+body.dark-mode .mobile-search {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+body.dark-mode .mobile-nav a {
+    color: var(--text-dark);
+}
+
+.mobile-nav a.current {
+    color: var(--gold);
+}
+
+/* Desktop override */
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: block;
+    }
+    .desktop-only {
+        display: inline-block !important;
+    }
+    .mobile-menu-btn {
+        display: none;
+    }
+    .mobile-menu, .mobile-menu-overlay {
+        display: none !important;
+    }
+}
+
+/* ====== Footer Mobile Accords CSS ====== */
+.footer-dropdown-header {
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.footer-links {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* On mobile, max-height defaults to 0 */
+@media (max-width: 767px) {
+    .footer-links {
+        max-height: 0;
+    }
+
+    .dropdown-icon {
+        display: block !important;
+    }
+}
+
+/* On desktop, always show and hide the chevron */
+@media (min-width: 768px) {
+    .footer-links {
+        max-height: none !important;
+    }
+
+    .dropdown-icon {
+        display: none !important;
+    }
+
+    .footer-dropdown-header {
+        cursor: default !important;
+    }
+}
+
+/* ====== Further Dark Mode Refinements ====== */
+body.dark-mode .mobile-menu {
+    background-color: var(--background-dark) !important;
+}
+body.dark-mode .search-container {
+    background-color: var(--background-dark) !important;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: var(--card-bg-dark) !important;
+    color: var(--text-dark) !important;
+    border-color: var(--border-dark) !important;
+}
+body.dark-mode .book-container {
+    background-color: var(--card-bg-dark) !important;
+    border-color: var(--gold) !important;
+}
+body.dark-mode .book-page.right-page {
+    background: rgba(0,0,0,0.2) !important;
+}
+body.dark-mode .card.post-card {
+    background-color: var(--background-dark) !important;
+    border-color: var(--gold) !important;
+}
+
+/* ====== CSS Logo Styles ====== */
+.tsc-css-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Times New Roman', serif;
+    color: var(--text);
+}
+
+.logo-icon svg {
+    width: 35px;
+    height: auto;
+}
+
+body.dark-mode .logo-icon svg path[fill="var(--text)"] {
+    fill: var(--text-dark);
+}
+
+.logo-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-the {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: -5px;
+}
+
+.logo-main {
+    font-size: 1.8rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.logo-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.logo-line {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--gold);
+    margin: 0;
+}
+
+.logo-heart {
+    margin: 0 5px;
+}
+
+.logo-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .tsc-css-logo {
+        transform: scale(0.85);
+        transform-origin: left center;
+    }
+}
+
+/* ====== Refined Mobile Header ====== */
+@media (max-width: 767px) {
+    .main-header {
+        position: sticky;
+        top: 0;
+        background-color: var(--background);
+        border-bottom: 2px solid var(--border-dark);
+        padding: 0.5rem 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    body.dark-mode .main-header {
+        background-color: var(--background-dark);
+        border-bottom-color: #333;
+    }
+
+    .header-utils {
+        gap: 0.2rem; /* Tighter gap for mobile */
+    }
+
+    .theme-toggle, .mobile-menu-btn {
+        padding: 0.3rem;
+    }
+
+    .theme-toggle svg, .mobile-menu-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Ensure the search toggle is hidden on mobile header since it's in the side menu */
+    #search-toggle-desktop {
+        display: none !important;
+    }
+}
+
+/* ====== Fix Dark Mode Backgrounds & Add Text Glow ====== */
+/* Ensure hero sections and all background containers are dark */
+body.dark-mode .hero,
+body.dark-mode .hero-container,
+body.dark-mode .activity,
+body.dark-mode .engage {
+    background-color: var(--background-dark) !important;
+}
+
+/* Make primary text "glow" in dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .logo-main,
+body.dark-mode .logo-the,
+body.dark-mode .logo-tagline {
+    text-shadow: 0 0 10px rgba(247, 238, 224, 0.4);
+}
+
+/* Ensure the gold text glows with a gold hue */
+body.dark-mode .cursive,
+body.dark-mode .gold-text {
+    text-shadow: 0 0 12px rgba(184, 134, 11, 0.6);
+}
+
+/* Ensure images don't glow, just text */
+body.dark-mode img {
+    box-shadow: none !important;
+}
+
+/* Fix for Hero block background in dark mode */
+body.dark-mode .hero-content {
+    background-color: var(--card-bg-dark) !important; /* Or var(--background-dark) depending on design */
+    border-color: var(--border-dark) !important;
+}
+
+/* Fix CSS Logo Mobile Stacking Overflow */
+.tsc-css-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .tsc-css-logo {
+        transform: scale(0.65); /* Scale it down even more to prevent breaking flex */
+        transform-origin: left center;
+        white-space: nowrap; /* Prevent "SOFT COLUMN" from wrapping */
+    }
+
+    .logo-main {
+        white-space: nowrap;
+    }
+}
+
+/* ====== Fix Mobile Header and Hero Layout ====== */
+@media (max-width: 767px) {
+    .main-header {
+        position: relative !important; /* Not sticky, let it flow */
+        background-color: var(--background) !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+        z-index: 100;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden; /* Prevent horizontal scroll */
+    }
+
+    body.dark-mode .main-header {
+        background-color: var(--background-dark) !important;
+    }
+
+    /* Ensure the new CSS Logo doesn't overflow */
+    .tsc-css-logo {
+        transform: scale(0.6) !important;
+        transform-origin: left center !important;
+        margin: -10px 0 !important; /* Counteract the scaling height gap */
+        white-space: nowrap !important;
+        flex-shrink: 0;
+    }
+
+    .logo-main, .logo-the, .logo-tagline {
+        white-space: nowrap !important;
+    }
+
+    /* Make sure the header utils (dark mode, menu) sit on the right and don't wrap */
+    .header-utils {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        flex-shrink: 0;
+    }
+
+    .hero {
+        margin-top: 0 !important; /* Reset any negative margins if they exist */
+    }
+
+    /* Ensure hero text is dark in light mode, light in dark mode */
+    .hero-content h1, .hero-content p {
+        color: var(--text) !important;
+    }
+    body.dark-mode .hero-content h1, body.dark-mode .hero-content p {
+        color: var(--text-dark) !important;
+    }
+}
+
+/* Fix the hero background in mobile specifically */
+@media (max-width: 767px) {
+    .hero-content {
+        background-color: transparent !important;
+        background: transparent !important;
+    }
+}
+
+/* Also ensure desktop dark mode has transparent or dark bg for hero-content */
+body.dark-mode .hero-content {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* ====== FINAL FIX FOR MOBILE HEADER ====== */
+@media (max-width: 767px) {
+    .main-header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0.5rem 0.5rem !important; /* give it a bit more breathing room */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tsc-css-logo {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 5px !important;
+        transform: scale(0.55) !important;
+        transform-origin: left center !important;
+        margin: -15px 0 -15px -15px !important; /* Counteract the scaling completely */
+        white-space: nowrap !important;
+        flex: 1 !important; /* Push everything else to the right */
+        min-width: 0 !important; /* allow shrink if needed */
+    }
+
+    .logo-text-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .header-utils {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 0 !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* ====== FIX LOGO CUT OFF ====== */
+@media (max-width: 767px) {
+    .main-header {
+        padding: 0.5rem 1rem !important; /* Increase padding again */
+        height: 60px !important; /* give explicit height */
+    }
+
+    .tsc-css-logo {
+        transform: scale(0.45) !important; /* scale more */
+        transform-origin: left center !important;
+        margin: -25px 0 -25px -15px !important;
+    }
+}
