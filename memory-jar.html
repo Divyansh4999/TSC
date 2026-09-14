@@ -280,6 +280,7 @@
             >
               <input
                 id="post-author"
+                style="display: none"
                 placeholder="Your name (optional)"
                 style="
                   padding: 0.8rem;
@@ -886,7 +887,7 @@
       </div>
     </footer>
     <script type="module">
-              import { db, collection, addDoc, getDocs, updateDoc, doc, query, orderBy } from './firebase-config.js';
+              import { db, auth, collection, addDoc, getDocs, updateDoc, doc, query, orderBy } from './firebase-config.js';
 
               document.addEventListener('DOMContentLoaded', () => {
                   const collectionName = 'tsc_memories';
@@ -964,8 +965,107 @@
                                   });
                               };
 
-                              actionsDiv.appendChild(likeBtn);
-                              actionsDiv.appendChild(shareBtn);
+
+                        // Comments Toggle
+                        const commentBtn = createElementWithText('button', '💬 Comments', 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
+
+                        const commentsSection = document.createElement('div');
+                        commentsSection.style.cssText = 'display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ccc;';
+
+                        const commentsList = document.createElement('div');
+                        commentsList.style.cssText = 'display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;';
+
+                        const commentForm = document.createElement('form');
+                        commentForm.style.cssText = 'display: flex; gap: 0.5rem;';
+                        const commentInput = document.createElement('input');
+                        commentInput.type = 'text';
+                        commentInput.placeholder = 'Add a comment...';
+                        commentInput.style.cssText = 'flex: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;';
+                        const commentSubmit = createElementWithText('button', 'Post', 'padding: 0.5rem 1rem; border: none; background: var(--gold); color: white; border-radius: 4px; cursor: pointer;');
+                        commentSubmit.type = 'submit';
+
+                        commentForm.appendChild(commentInput);
+                        commentForm.appendChild(commentSubmit);
+                        commentsSection.appendChild(commentsList);
+                        commentsSection.appendChild(commentForm);
+
+                        let commentsLoaded = false;
+
+                        commentBtn.onclick = async () => {
+                            if (commentsSection.style.display === 'none') {
+                                commentsSection.style.display = 'block';
+                                if (!commentsLoaded) {
+                                    commentsList.innerHTML = '<p style="font-size: 0.8rem; color: #999;">Loading comments...</p>';
+                                    try {
+                                        const commentsRef = collection(db, collectionName, postId, 'comments');
+                                        const q = query(commentsRef, orderBy('timestamp', 'asc'));
+                                        const snap = await getDocs(q);
+                                        commentsList.innerHTML = '';
+                                        if (snap.empty) {
+                                            commentsList.innerHTML = '<p style="font-size: 0.8rem; color: #999;">No comments yet.</p>';
+                                        } else {
+                                            snap.forEach(cSnap => {
+                                                const cData = cSnap.data();
+                                                const cEl = document.createElement('div');
+                                                cEl.style.cssText = 'background: rgba(0,0,0,0.02); padding: 0.5rem; border-radius: 4px;';
+                                                cEl.innerHTML = `<span style="font-weight: bold; font-size: 0.8rem; color: var(--gold);">${cData.author}</span> <span style="font-size: 0.9rem;">${cData.content}</span>`;
+                                                commentsList.appendChild(cEl);
+                                            });
+                                        }
+                                        commentsLoaded = true;
+                                    } catch(e) {
+                                        commentsList.innerHTML = '<p style="color: red; font-size:0.8rem;">Error loading comments.</p>';
+                                    }
+                                }
+                            } else {
+                                commentsSection.style.display = 'none';
+                            }
+                        };
+
+                        commentForm.onsubmit = async (e) => {
+                            e.preventDefault();
+                            const user = auth.currentUser;
+                            if (!user) {
+                                alert("Please sign in to comment.");
+                                window.location.href = 'login.html';
+                                return;
+                            }
+
+                            const text = commentInput.value.trim();
+                            if (text) {
+                                commentSubmit.disabled = true;
+                                commentSubmit.textContent = '...';
+                                try {
+                                    const commentsRef = collection(db, collectionName, postId, 'comments');
+                                    await addDoc(commentsRef, {
+                                        content: text,
+                                        author: user.displayName || user.email.split('@')[0],
+                                        authorId: user.uid,
+                                        timestamp: new Date().toISOString()
+                                    });
+
+                                    // Add immediately to UI
+                                    if(commentsList.innerHTML.includes('No comments')) commentsList.innerHTML = '';
+                                    const cEl = document.createElement('div');
+                                    cEl.style.cssText = 'background: rgba(0,0,0,0.02); padding: 0.5rem; border-radius: 4px;';
+                                    cEl.innerHTML = `<span style="font-weight: bold; font-size: 0.8rem; color: var(--gold);">${user.displayName || user.email.split('@')[0]}</span> <span style="font-size: 0.9rem;">${text}</span>`;
+                                    commentsList.appendChild(cEl);
+
+                                    commentInput.value = '';
+                                } catch(e) {
+                                    alert("Error posting comment.");
+                                } finally {
+                                    commentSubmit.disabled = false;
+                                    commentSubmit.textContent = 'Post';
+                                }
+                            }
+                        };
+
+                        actionsDiv.appendChild(commentBtn);
+
+                        actionsDiv.appendChild(likeBtn);
+                        actionsDiv.appendChild(shareBtn);
+
 
                               metaDiv.appendChild(authorSpan);
 
@@ -992,14 +1092,25 @@
                       e.preventDefault();
                       const contentInput = document.getElementById('post-content');
                       const authorInput = document.getElementById('post-author');
+                if (authorInput) authorInput.style.display = 'none';
                       const submitBtn = form.querySelector('button[type="submit"]');
 
-                      const newPost = {
-                          content: contentInput.value.trim(),
-                          author: authorInput.value.trim() || 'Anonymous',
-                          timestamp: new Date().toISOString(),
-                          likes: 0
-                      };
+
+                const user = auth.currentUser;
+                if (!user) {
+                    alert("Please sign in to post.");
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                const newPost = {
+                    content: contentInput.value.trim(),
+                    author: user.displayName || user.email.split('@')[0],
+                    authorId: user.uid,
+                    timestamp: new Date().toISOString(),
+                    likes: 0
+                };
+
 
                       if (newPost.content) {
                           try {
@@ -1186,7 +1297,6 @@
         });
       });
     </script>
-
     <div
       id="email-simulation-modal"
       style="
@@ -1356,5 +1466,6 @@
         }
       });
     </script>
+    <script src="auth-state.js" type="module"></script>
   </body>
 </html>
