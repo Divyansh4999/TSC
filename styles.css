@@ -1502,3 +1502,15 @@ body.dark-mode .hero-content {
         margin: -25px 0 -25px -15px !important;
     }
 }
+
+/* Fix Email Simulation Modal List */
+#email-simulation-modal ul {
+    display: block !important;
+    list-style-type: disc !important;
+    padding-left: 2rem !important;
+}
+
+#email-simulation-modal ul li {
+    display: list-item !important;
+    margin-bottom: 0.5rem;
+}

@@ -2,54 +2,17 @@
 
 <html lang="en">
   <head>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta charset="utf-8" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="The Soft Column" name="author" />
-    <meta
-      content="The Soft Column is a quiet home for stories, essays, letters, and writer voices. Discover daily reads, featured issues, and community writing."
-      name="description"
-    />
-    <meta
-      content="The Soft Column, TSC, essays, stories, daily writing, issues, writers, community prompt, reading"
-      name="keywords"
-    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="#f7eee0" name="theme-color" />
-    <link href="images/The_Soft_Column.webp" rel="icon" type="image/webp" />
-    <link href="images/The_Soft_Column.webp" rel="apple-touch-icon" />
-    <link href="https://yourdomain.com/" rel="canonical" />
-    <meta content="The Soft Column" property="og:site_name" />
-    <meta content="en_US" property="og:locale" />
-    <meta content="The Soft Column" property="og:title" />
-    <meta
-      content="The Soft Column is a quiet home for stories, essays, letters, and writer voices."
-      property="og:description"
-    />
-    <meta content="images/The_Soft_Column.webp" property="og:image" />
-    <meta
-      content="The Soft Column logo and hero image"
-      property="og:image:alt"
-    />
-    <meta content="website" property="og:type" />
-    <meta content="https://yourdomain.com/" property="og:url" />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="The Soft Column" name="twitter:title" />
-    <meta
-      content="The Soft Column is a quiet home for stories, essays, letters, and writer voices."
-      name="twitter:description"
-    />
-    <meta content="images/The_Soft_Column.webp" name="twitter:image" />
-    <meta content="@the_soft_column" name="twitter:site" />
-    <meta content="@the_soft_column" name="twitter:creator" />
-    <meta content="index, follow" name="robots" />
-    <link href="styles.css" rel="stylesheet" />
+    <title>My Profile - The Soft Column</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&amp;display=swap"
       rel="stylesheet"
     />
-    <title>The Soft Column</title>
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body id="top">
     <header class="main-header">
@@ -80,7 +43,7 @@
       <!-- Desktop Nav -->
       <nav class="desktop-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a class="current" href="index.html">Home</a></li>
           <li><a href="daily.html">Daily</a></li>
           <li><a href="issue.html">Issues</a></li>
           <li><a href="writers.html">Writers</a></li>
@@ -186,137 +149,83 @@
         </button>
       </div>
     </header>
-    <!-- Mobile Slide-out Menu -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu">
-      <div class="mobile-menu-header">
-        <button
-          aria-label="Close Menu"
-          class="close-menu-btn"
-          id="close-menu-btn"
+    <main
+      style="
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        min-height: 80vh;
+      "
+    >
+      <div
+        class="card"
+        style="
+          padding: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          border-color: var(--gold);
+        "
+      >
+        <h1
+          class="cursive"
+          style="color: var(--gold); font-size: 3rem; margin-bottom: 0.5rem"
         >
-          <svg
-            class="close-icon"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewbox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line x1="18" x2="6" y1="6" y2="18"></line>
-            <line x1="6" x2="18" y1="6" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div class="mobile-menu-content">
-        <div class="mobile-search">
-          <svg
-            class="search-icon"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewbox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-          </svg>
-          <input id="mobile-search-input" placeholder="Search..." type="text" />
-        </div>
-        <nav class="mobile-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="daily.html">Daily</a></li>
-            <li><a href="issue.html">Issues</a></li>
-            <li><a href="writers.html">Writers</a></li>
-            <li><a href="submit.html">Submit</a></li>
-            <li><a href="info.html">About</a></li>
-          </ul>
-        </nav>
-        <a
-          class="btn join-us"
-          href="#"
-          style="margin-top: 2rem; width: 100%; text-align: center"
-          >Join Us</a
-        >
-      </div>
-    </div>
-    <main>
-      <section class="hero">
-        <div class="hero-container">
-          <div class="hero-top">
-            <h1><span class="cursive">Letter Box</span></h1>
-            <hr />
-            <p class="tagline">
-              A letter. A memory. A confession. Send it anonymously.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="social-feed">
+          Your Space
+        </h1>
+        <p style="color: #666; margin-bottom: 2rem">
+          Manage your quiet corner of the web.
+        </p>
         <div
-          class="grid"
           style="
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            background: rgba(0, 0, 0, 0.02);
+            width: 100%;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
           "
         >
-          <div class="card" style="padding: 2rem">
-            <h3 style="margin-bottom: 1rem">Share your thoughts</h3>
-            <form
-              id="post-form"
-              style="display: flex; flex-direction: column; gap: 1rem"
-            >
-              <input
-                id="post-author"
-                style="display: none"
-                placeholder="Your name (optional)"
-                style="
-                  padding: 0.8rem;
-                  border: 1px solid #ccc;
-                  border-radius: 4px;
-                "
-                type="text"
-              />
-              <textarea
-                id="post-content"
-                placeholder="Write your anonymous letter here..."
-                required=""
-                rows="4"
-                style="
-                  padding: 0.8rem;
-                  border: 1px solid #ccc;
-                  border-radius: 4px;
-                "
-              ></textarea>
-              <button
-                class="btn post-submit-btn"
-                style="align-self: flex-start"
-                type="submit"
-              >
-                Post
-              </button>
-            </form>
-          </div>
+          <h3
+            id="profile-name"
+            style="font-size: 1.5rem; margin-bottom: 0.5rem"
+          >
+            Loading...
+          </h3>
+          <p id="profile-email" style="color: #666; margin-bottom: 1.5rem"></p>
+          <button class="btn" id="view-column-btn" style="margin-right: 1rem">
+            View My Public Column
+          </button>
+          <button
+            class="btn"
+            id="logout-btn"
+            style="
+              background: transparent;
+              color: var(--gold);
+              border: 1px solid var(--gold);
+            "
+          >
+            Sign Out
+          </button>
+        </div>
+        <div style="width: 100%; text-align: left">
+          <h3
+            style="
+              border-bottom: 1px solid var(--gold);
+              padding-bottom: 0.5rem;
+              margin-bottom: 1rem;
+            "
+          >
+            Your Recent Writings
+          </h3>
           <div
-            id="posts-container"
+            id="user-posts-container"
             style="display: flex; flex-direction: column; gap: 1rem"
           >
-            <!-- Posts will be loaded here via JS -->
+            <p style="color: #666">Loading your posts...</p>
           </div>
         </div>
-      </section>
+      </div>
     </main>
     <footer>
       <div class="vertical-division">
@@ -872,7 +781,7 @@
             <p>This is where we keep them.</p>
           </div>
           <div class="" style="border-left: 2px solid var(--background)">
-            <a href="#top">Back To Top ↑ </a>
+            <a class="btn" href="#top">Back To Top ↑ </a>
           </div>
         </div>
         <div
@@ -887,254 +796,98 @@
       </div>
     </footer>
     <script type="module">
-              import { db, auth, collection, addDoc, getDocs, updateDoc, doc, query, orderBy } from './firebase-config.js';
+      import {
+        auth,
+        db,
+        onAuthStateChanged,
+        signOut,
+        collection,
+        query,
+        where,
+        getDocs,
+        orderBy,
+      } from "./firebase-config.js";
 
-              document.addEventListener('DOMContentLoaded', () => {
-                  const collectionName = 'tsc_letters';
-                  const form = document.getElementById('post-form');
-                  const postsContainer = document.getElementById('posts-container');
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameEl = document.getElementById("profile-name");
+        const emailEl = document.getElementById("profile-email");
+        const viewBtn = document.getElementById("view-column-btn");
+        const logoutBtn = document.getElementById("logout-btn");
+        const postsContainer = document.getElementById("user-posts-container");
 
-                  // Function to sanitize and set text
-                  function createElementWithText(tag, text, styles = '') {
-                      const el = document.createElement(tag);
-                      el.textContent = text;
-                      if (styles) el.style.cssText = styles;
-                      return el;
-                  }
+        onAuthStateChanged(auth, async (user) => {
+          if (!user) {
+            window.location.href = "login.html";
+            return;
+          }
 
-                  // Load posts from Firebase
-                  async function loadPosts() {
-                      try {
-                          postsContainer.innerHTML = '<p style="text-align: center; color: #666;">Loading posts...</p>';
+          const displayName = user.displayName || user.email.split("@")[0];
+          nameEl.textContent = displayName;
+          emailEl.textContent = user.email;
 
-                          const q = query(collection(db, collectionName), orderBy("timestamp", "desc"));
-                          const querySnapshot = await getDocs(q);
+          viewBtn.onclick = () => {
+            window.location.href =
+              "author.html?name=" + encodeURIComponent(displayName);
+          };
 
-                          postsContainer.innerHTML = '';
+          // Fetch user's posts
+          try {
+            const containers = [
+              "tsc_community_posts",
+              "tsc_letters",
+              "tsc_memories",
+            ];
+            let allPosts = [];
 
-                          if (querySnapshot.empty) {
-                              postsContainer.innerHTML = '<p style="text-align: center; color: #666;">No posts yet. Be the first to share!</p>';
-                              return;
-                          }
-
-                          querySnapshot.forEach((docSnap) => {
-                              const post = docSnap.data();
-                              const postId = docSnap.id;
-                              if (post.likes === undefined) post.likes = 0;
-
-                              const postEl = document.createElement('div');
-                              postEl.className = 'card post-card';
-                              postEl.style.padding = '1.5rem';
-                              postEl.dataset.id = postId;
-
-                              const date = new Date(post.timestamp).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-
-                              const contentP = createElementWithText('p', post.content, 'font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;');
-
-                              const metaDiv = document.createElement('div');
-                              metaDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666; border-top: 1px solid #eee; padding-top: 1rem;';
-
-                              const authorSpan = createElementWithText('span', '- ' + (post.author || 'Anonymous'));
-                              const dateSpan = createElementWithText('span', date);
-
-                              const actionsDiv = document.createElement('div');
-                              actionsDiv.style.cssText = 'display: flex; gap: 1rem; align-items: center; margin-left: 1rem;';
-
-                              const likeBtn = createElementWithText('button', '❤️ ' + post.likes, 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
-                              likeBtn.onclick = async () => {
-                                  try {
-                                      post.likes++;
-                                      likeBtn.textContent = '❤️ ' + post.likes;
-                                      const postRef = doc(db, collectionName, postId);
-                                      await updateDoc(postRef, {
-                                          likes: post.likes
-                                      });
-                                  } catch (e) {
-                                      console.error("Error updating like: ", e);
-                                  }
-                              };
-
-                              const shareBtn = createElementWithText('button', '🔗 Share', 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
-                              shareBtn.onclick = () => {
-                                  navigator.clipboard.writeText(post.content + '
-
-      - ' + (post.author || 'Anonymous')).then(() => {
-                                      const origText = shareBtn.textContent;
-                                      shareBtn.textContent = '✅ Copied';
-                                      setTimeout(() => shareBtn.textContent = origText, 2000);
-                                  });
-                              };
-
-
-                        // Comments Toggle
-                        const commentBtn = createElementWithText('button', '💬 Comments', 'background: none; border: none; cursor: pointer; color: #666; font-size: 0.9rem; padding: 0;');
-
-                        const commentsSection = document.createElement('div');
-                        commentsSection.style.cssText = 'display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ccc;';
-
-                        const commentsList = document.createElement('div');
-                        commentsList.style.cssText = 'display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;';
-
-                        const commentForm = document.createElement('form');
-                        commentForm.style.cssText = 'display: flex; gap: 0.5rem;';
-                        const commentInput = document.createElement('input');
-                        commentInput.type = 'text';
-                        commentInput.placeholder = 'Add a comment...';
-                        commentInput.style.cssText = 'flex: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;';
-                        const commentSubmit = createElementWithText('button', 'Post', 'padding: 0.5rem 1rem; border: none; background: var(--gold); color: white; border-radius: 4px; cursor: pointer;');
-                        commentSubmit.type = 'submit';
-
-                        commentForm.appendChild(commentInput);
-                        commentForm.appendChild(commentSubmit);
-                        commentsSection.appendChild(commentsList);
-                        commentsSection.appendChild(commentForm);
-
-                        let commentsLoaded = false;
-
-                        commentBtn.onclick = async () => {
-                            if (commentsSection.style.display === 'none') {
-                                commentsSection.style.display = 'block';
-                                if (!commentsLoaded) {
-                                    commentsList.innerHTML = '<p style="font-size: 0.8rem; color: #999;">Loading comments...</p>';
-                                    try {
-                                        const commentsRef = collection(db, collectionName, postId, 'comments');
-                                        const q = query(commentsRef, orderBy('timestamp', 'asc'));
-                                        const snap = await getDocs(q);
-                                        commentsList.innerHTML = '';
-                                        if (snap.empty) {
-                                            commentsList.innerHTML = '<p style="font-size: 0.8rem; color: #999;">No comments yet.</p>';
-                                        } else {
-                                            snap.forEach(cSnap => {
-                                                const cData = cSnap.data();
-                                                const cEl = document.createElement('div');
-                                                cEl.style.cssText = 'background: rgba(0,0,0,0.02); padding: 0.5rem; border-radius: 4px;';
-                                                cEl.innerHTML = `<span style="font-weight: bold; font-size: 0.8rem; color: var(--gold);">${cData.author}</span> <span style="font-size: 0.9rem;">${cData.content}</span>`;
-                                                commentsList.appendChild(cEl);
-                                            });
-                                        }
-                                        commentsLoaded = true;
-                                    } catch(e) {
-                                        commentsList.innerHTML = '<p style="color: red; font-size:0.8rem;">Error loading comments.</p>';
-                                    }
-                                }
-                            } else {
-                                commentsSection.style.display = 'none';
-                            }
-                        };
-
-                        commentForm.onsubmit = async (e) => {
-                            e.preventDefault();
-                            const user = auth.currentUser;
-                            if (!user) {
-                                alert("Please sign in to comment.");
-                                window.location.href = 'login.html';
-                                return;
-                            }
-
-                            const text = commentInput.value.trim();
-                            if (text) {
-                                commentSubmit.disabled = true;
-                                commentSubmit.textContent = '...';
-                                try {
-                                    const commentsRef = collection(db, collectionName, postId, 'comments');
-                                    await addDoc(commentsRef, {
-                                        content: text,
-                                        author: user.displayName || user.email.split('@')[0],
-                                        authorId: user.uid,
-                                        timestamp: new Date().toISOString()
-                                    });
-
-                                    // Add immediately to UI
-                                    if(commentsList.innerHTML.includes('No comments')) commentsList.innerHTML = '';
-                                    const cEl = document.createElement('div');
-                                    cEl.style.cssText = 'background: rgba(0,0,0,0.02); padding: 0.5rem; border-radius: 4px;';
-                                    cEl.innerHTML = `<span style="font-weight: bold; font-size: 0.8rem; color: var(--gold);">${user.displayName || user.email.split('@')[0]}</span> <span style="font-size: 0.9rem;">${text}</span>`;
-                                    commentsList.appendChild(cEl);
-
-                                    commentInput.value = '';
-                                } catch(e) {
-                                    alert("Error posting comment.");
-                                } finally {
-                                    commentSubmit.disabled = false;
-                                    commentSubmit.textContent = 'Post';
-                                }
-                            }
-                        };
-
-                        actionsDiv.appendChild(commentBtn);
-
-                        actionsDiv.appendChild(likeBtn);
-                        actionsDiv.appendChild(shareBtn);
-
-
-                              metaDiv.appendChild(authorSpan);
-
-                              const rightMetaDiv = document.createElement('div');
-                              rightMetaDiv.style.cssText = 'display: flex; align-items: center;';
-                              rightMetaDiv.appendChild(dateSpan);
-                              rightMetaDiv.appendChild(actionsDiv);
-
-                              metaDiv.appendChild(rightMetaDiv);
-
-                              postEl.appendChild(contentP);
-                              postEl.appendChild(metaDiv);
-
-                              postsContainer.appendChild(postEl);
-                          });
-                      } catch (e) {
-                          console.error("Error loading posts: ", e);
-                          postsContainer.innerHTML = '<p style="text-align: center; color: red;">Failed to connect to Database. Did you add your Firebase config?</p>';
-                      }
-                  }
-
-                  // Handle submit
-                  form.addEventListener('submit', async (e) => {
-                      e.preventDefault();
-                      const contentInput = document.getElementById('post-content');
-                      const authorInput = document.getElementById('post-author');
-                if (authorInput) authorInput.style.display = 'none';
-                      const submitBtn = form.querySelector('button[type="submit"]');
-
-
-                const user = auth.currentUser;
-                if (!user) {
-                    alert("Please sign in to post.");
-                    window.location.href = 'login.html';
-                    return;
-                }
-
-                const newPost = {
-                    content: contentInput.value.trim(),
-                    author: user.displayName || user.email.split('@')[0],
-                    authorId: user.uid,
-                    timestamp: new Date().toISOString(),
-                    likes: 0
-                };
-
-
-                      if (newPost.content) {
-                          try {
-                              submitBtn.textContent = 'Posting...';
-                              submitBtn.disabled = true;
-
-                              await addDoc(collection(db, collectionName), newPost);
-
-                              contentInput.value = '';
-                              authorInput.value = '';
-                              loadPosts();
-                          } catch (e) {
-                              console.error("Error adding document: ", e);
-                              alert("Could not save post. Check your Firebase config.");
-                          } finally {
-                              submitBtn.textContent = 'Post';
-                              submitBtn.disabled = false;
-                          }
-                      }
-                  });
-
-                  // Initial load
-                  loadPosts();
+            const fetchPromises = containers.map(async (collectionName) => {
+              const q = query(
+                collection(db, collectionName),
+                where("authorId", "==", user.uid),
+              );
+              const snapshot = await getDocs(q);
+              snapshot.forEach((docSnap) => {
+                allPosts.push({
+                  ...docSnap.data(),
+                  id: docSnap.id,
+                  source: collectionName,
+                });
               });
+            });
+
+            await Promise.all(fetchPromises);
+            allPosts.sort(
+              (a, b) => new Date(b.timestamp) - new Date(a.timestamp),
+            );
+
+            postsContainer.innerHTML = "";
+            if (allPosts.length === 0) {
+              postsContainer.innerHTML =
+                '<p style="color: #666; font-style: italic;">You have not published anything yet.</p>';
+            } else {
+              allPosts.forEach((post) => {
+                const date = new Date(post.timestamp).toLocaleDateString();
+                const postEl = document.createElement("div");
+                postEl.style.cssText =
+                  "padding: 1rem; border: 1px solid var(--border-dark); border-radius: 4px;";
+                postEl.innerHTML = `<div style="display:flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--gold);"><span>${post.source.replace("tsc_", "").replace("_", " ")}</span><span>${date}</span></div><p style="margin:0;">${post.content}</p>`;
+                postsContainer.appendChild(postEl);
+              });
+            }
+          } catch (e) {
+            postsContainer.innerHTML =
+              '<p style="color: red;">Error loading posts.</p>';
+          }
+        });
+
+        logoutBtn.addEventListener("click", async () => {
+          try {
+            await signOut(auth);
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Error signing out:", error);
+          }
+        });
+      });
     </script>
     <script>
       // Global Theme, Search, and Mobile Menu Handler
@@ -1254,218 +1007,5 @@
           mobileSearchInput.addEventListener("input", handleSearch);
       });
     </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const dropdownHeaders = document.querySelectorAll(
-          ".footer-dropdown-header",
-        );
-
-        dropdownHeaders.forEach((header) => {
-          header.addEventListener("click", () => {
-            // Toggle active class on header
-            header.classList.toggle("active");
-
-            // Toggle display of the next sibling (the links container)
-            const content = header.nextElementSibling;
-            if (content.style.maxHeight) {
-              content.style.maxHeight = null;
-              header.querySelector(".dropdown-icon").style.transform =
-                "rotate(0deg)";
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-              header.querySelector(".dropdown-icon").style.transform =
-                "rotate(180deg)";
-            }
-          });
-        });
-
-        // Handle window resize to reset styles for desktop
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 768) {
-            document.querySelectorAll(".footer-links").forEach((el) => {
-              el.style.maxHeight = null;
-            });
-            document.querySelectorAll(".dropdown-icon").forEach((icon) => {
-              icon.style.transform = "rotate(0deg)";
-            });
-            document
-              .querySelectorAll(".footer-dropdown-header")
-              .forEach((header) => {
-                header.classList.remove("active");
-              });
-          }
-        });
-      });
-    </script>
-    <div
-      id="email-simulation-modal"
-      style="
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 3000;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-      "
-    >
-      <div
-        class="card"
-        style="
-          background: var(--background);
-          width: 100%;
-          max-width: 500px;
-          border-radius: 8px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          overflow: hidden;
-          animation: slideUp 0.4s ease-out;
-        "
-      >
-        <div
-          style="
-            background: var(--gold);
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
-          <h3 style="margin: 0; font-family: sans-serif; font-size: 1rem">
-            New Message
-          </h3>
-          <button
-            id="close-email-modal"
-            style="
-              background: none;
-              border: none;
-              color: white;
-              font-size: 1.5rem;
-              cursor: pointer;
-              line-height: 1;
-            "
-          >
-            ×
-          </button>
-        </div>
-        <div
-          style="padding: 1.5rem; border-bottom: 1px solid var(--border-dark)"
-        >
-          <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #666">
-            <strong>From:</strong> thesoftcolumn@gmail.com
-          </p>
-          <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #666">
-            <strong>To:</strong>
-            <span id="simulated-email-target">you@example.com</span>
-          </p>
-          <p style="margin: 0; font-size: 0.9rem; color: #666">
-            <strong>Subject:</strong> Welcome to The Soft Column
-          </p>
-        </div>
-        <div style="padding: 2rem 1.5rem; font-family: serif; line-height: 1.8">
-          <p>Dear Reader,</p>
-          <p>
-            Welcome to <strong>The Soft Column</strong>. We are so glad you
-            found your way here.
-          </p>
-          <p>
-            This is a quiet space designed for slow reading and gentle thoughts.
-            Here is what you can explore:
-          </p>
-          <ul style="margin: 1rem 0 1rem 1.5rem">
-            <li>
-              <strong>The Community:</strong> Share your thoughts and connect
-              with others.
-            </li>
-            <li>
-              <strong>Memory Jar:</strong> Leave behind a tiny, nostalgic
-              memory.
-            </li>
-            <li>
-              <strong>Letter Box:</strong> Send or read anonymous letters.
-            </li>
-            <li>
-              <strong>Daily Reads:</strong> Find essays and stories that linger.
-            </li>
-          </ul>
-          <p>Take your time. There is no rush here.</p>
-          <p style="margin-top: 2rem">
-            Warmly,<br /><span
-              style="
-                font-family: &quot;Dancing Script&quot;, cursive;
-                font-size: 1.5rem;
-                color: var(--gold);
-              "
-              >TSC Team</span
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-    <style>
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      body.dark-mode #email-simulation-modal .card {
-        background: var(--background-dark);
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Attach listener to all subscribe buttons
-        const subscribeBtns = document.querySelectorAll(
-          'button[type="submit"][for="email-community"]',
-        );
-        const modal = document.getElementById("email-simulation-modal");
-        const closeBtn = document.getElementById("close-email-modal");
-        const targetEmailSpan = document.getElementById(
-          "simulated-email-target",
-        );
-
-        subscribeBtns.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            // Find the input field relative to the button
-            const container =
-              btn.closest(".vertical-division") || btn.parentElement;
-            const emailInput = container.querySelector('input[type="email"]');
-
-            const email = emailInput ? emailInput.value.trim() : "";
-            if (!email) {
-              alert("Please enter a valid email address.");
-              return;
-            }
-
-            targetEmailSpan.textContent = email;
-            modal.style.display = "flex";
-            if (emailInput) emailInput.value = ""; // clear input
-          });
-        });
-
-        if (closeBtn) {
-          closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-          });
-        }
-
-        // Close on click outside
-        if (modal) {
-          modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-              modal.style.display = "none";
-            }
-          });
-        }
-      });
-    </script>
-    <script src="auth-state.js" type="module"></script>
   </body>
 </html>
